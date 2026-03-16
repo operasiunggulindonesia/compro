@@ -31,6 +31,8 @@ const partnerLogos = [
   "/kai.png",
   "/kiabadi.png",
   "/freeport.png",
+  "/logo_global.png",
+  "/supra.png",
 ];
 
 const boardMembers = [
@@ -85,10 +87,10 @@ const teamMembers = [
     ],
   },
   {
-    image: "/nadia.jpg",
-    name: "Nadya Raida Firdaus, A.Md.Ak.",
+    image: "/vero.png",
+    name: "Veronika Juliana Purwandanu, S.M.",
     position: "Account Executive",
-    linkedin: "https://www.linkedin.com/in/nadya-raida-firdaus/",
+    linkedin: "https://www.linkedin.com/in/veronikajuliana/?locale=en_US",
     expertise: [
       "Client Relationship Management",
       "Account & Pipeline Management",

@@ -25,6 +25,7 @@ const certifications = [
     title: "Certified Strategic Business Analyst (CSBA)",
     summary:
       "Strategic business analysis, competitive positioning, and corporate strategy execution.",
+    syllabusUrl: "/silabus/silabus-csba.pdf",
     details: [
       {
         label: "Format",
@@ -46,6 +47,7 @@ const certifications = [
     title: "Certified Retail Management Expert (CRME)",
     summary:
       "Retail strategy, merchandising, pricing, and digital transformation.",
+    syllabusUrl: "/silabus/silabus-crme.pdf",
     details: [
       {
         label: "Format",
@@ -65,6 +67,7 @@ const certifications = [
   {
     title: "Certified Supply Chain Manager (CSCM)",
     summary: "Comprehensive supply chain design and logistics optimization.",
+    syllabusUrl: "/silabus/silabus-cscm.pdf",
     details: [
       {
         label: "Format",
@@ -84,6 +87,7 @@ const certifications = [
   {
     title: "Certified International Project Manager (CIPM)",
     summary: "International project lifecycle and governance mastery.",
+    syllabusUrl: "/silabus/silabus-cipm.pdf",
     details: [
       {
         label: "Format",
@@ -103,6 +107,7 @@ const certifications = [
   {
     title: "Certified Forecast Demand Manager (CFDM)",
     summary: "Demand forecasting and advanced statistical modeling.",
+    syllabusUrl: "/silabus/silabus-cfdm.pdf",
     details: [
       {
         label: "Format",
@@ -177,7 +182,6 @@ export default function InternationalCertification() {
           text-align: center;
         }
 
-        /* Dark overlay to maintain text readability */
         .ic-hero-overlay {
           position: absolute;
           inset: 0;
@@ -486,7 +490,6 @@ export default function InternationalCertification() {
           line-height: 1.65;
         }
 
-        /* LEANCORE + AAFM */
         .lc-aafm-grid {
           display: grid;
           grid-template-columns: 1fr 1fr;
@@ -646,6 +649,64 @@ export default function InternationalCertification() {
           margin-top: 5px;
         }
 
+        /* ── ACCORDION ACTION BUTTONS ── */
+        .accordion-actions {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          margin-top: 20px;
+          flex-wrap: wrap;
+        }
+
+        .silabus-btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          padding: 10px 20px;
+          background: transparent;
+          border: 1.5px solid #004276;
+          color: #004276;
+          font-size: 11px;
+          font-weight: 700;
+          letter-spacing: 0.1em;
+          border-radius: 2px;
+          text-decoration: none;
+          transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.2s;
+          cursor: pointer;
+          font-family: 'DM Sans', sans-serif;
+        }
+
+        .silabus-btn:hover {
+          background: #004276;
+          color: #FACC15;
+          border-color: #004276;
+          transform: translateY(-2px);
+        }
+
+        .daftar-btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          padding: 10px 20px;
+          background: #25D366;
+          border: 1.5px solid #25D366;
+          color: #fff;
+          font-size: 11px;
+          font-weight: 700;
+          letter-spacing: 0.1em;
+          border-radius: 2px;
+          text-decoration: none;
+          transition: background 0.2s, border-color 0.2s, transform 0.2s;
+          cursor: pointer;
+          font-family: 'DM Sans', sans-serif;
+        }
+
+        .daftar-btn:hover {
+          background: #1EBE5D;
+          border-color: #1EBE5D;
+          transform: translateY(-2px);
+        }
+
         /* ── PREVIOUS PROJECTS ── */
         .prev-section { background: #fff; }
 
@@ -783,13 +844,14 @@ export default function InternationalCertification() {
           .prev-images { grid-template-columns: 1fr; }
           .cta-section { padding: 56px 24px; }
           .cta-inner { padding: 48px 28px; }
+          .accordion-actions { flex-direction: column; align-items: flex-start; }
+          .silabus-btn, .daftar-btn { width: 100%; justify-content: center; }
         }
       `}</style>
 
       <div className="ic-page">
         {/* ── HERO ── */}
         <section className="ic-hero">
-          {/* Background image overlay layers */}
           <div className="ic-hero-overlay" />
           <div className="ic-hero-grid" />
           <div className="ic-hero-orb1" />
@@ -1027,6 +1089,56 @@ export default function InternationalCertification() {
                         )}
                       </div>
                     ))}
+
+                    {/* ── ACTION BUTTONS ── */}
+                    <div className="accordion-actions">
+                      {/* Download Silabus */}
+                      <a
+                        href={item.syllabusUrl}
+                        download
+                        className="silabus-btn"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <svg
+                          width="14"
+                          height="14"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                          <polyline points="7 10 12 15 17 10" />
+                          <line x1="12" y1="15" x2="12" y2="3" />
+                        </svg>
+                        DOWNLOAD SILABUS
+                      </a>
+
+                      {/* Daftar via WhatsApp */}
+                      <a
+                        href={`https://wa.me/6281803540000?text=Halo%20LeanCore%20Consulting,%20saya%20ingin%20mendaftar%20program%20*${encodeURIComponent(item.title)}*.`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="daftar-btn"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <svg
+                          width="14"
+                          height="14"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                        </svg>
+                        DAFTAR SEKARANG
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1063,7 +1175,6 @@ export default function InternationalCertification() {
                   style={{ maxHeight: 300 }}
                 />
               </div>
-
               <div className="prev-img-wrap">
                 <Image
                   src="/certif1.png"
