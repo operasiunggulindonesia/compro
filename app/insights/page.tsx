@@ -3,46 +3,74 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 const insights = [
   {
-    image: "/insight1.jpeg",
+    image: "/insight/insight1.jpeg",
     tag: "STRATEGY",
     title: "Three Pillars of Excellence",
     caption:
       "Operational Excellence tidak tercipta secara instan.\nIa dibangun dari harmonisasi tiga pilar utama: People, Process, dan Technology.\n\nPeople adalah penggerak — Kompetensi dan kepemimpinan menentukan arah.\nProcess adalah fondasi — Standar yang jelas mencegah disfungsi operasional.\nTechnology adalah akselerator — Mempercepat kinerja, bukan menggantikan peran manusia.\n\nKetika ketiganya selaras, organisasi mampu mencapai efisiensi operasional yang berkelanjutan dan siap bersaing di era digital.\n\nOne Goal. Three Pillars. Sustainable Operational Efficiency.\n\nBagaimana dengan Perusahaan Anda? Di antara ketiga pilar ini, mana yang paling menantang saat ini?\n\n#OperationsManagement #SupplyChain #BusinessStrategy #LeanManufacturing #DigitalTransformation #Leadership #Insight",
   },
   {
-    image: "/insight2.jpeg",
+    image: "/insight/insight2.jpeg",
     tag: "OPERATIONS",
     title: "Stop Firefighting, Start Leading",
     caption:
       "Sering 'Memadamkan Api' di kantor?\n\nMasalah datang silih berganti, stok habis tanpa informasi, pengiriman terlambat, hingga satu gangguan pemasok yang langsung menghentikan produksi.\n\nIni bukan sekadar masalah harian — ini sinyal bahwa visibility, ketangguhan, dan kesiapan SDM perlu didiagnosis ulang.\n\nOperasional sehat mampu mengantisipasi, bertahan, dan bertindak tepat di tengah ketidakpastian.\n\nSaatnya beralih dari firefighting mode ke operational excellence berkelanjutan.\n\n#LCCInsight #OperationalConsulting #OperationalExcellence #SupplyChainOptimization #BusinessTransformation #ProcessImprovement #LeanManagement #ConsultingServices",
   },
   {
-    image: "/insight3.jpg",
+    image: "/insight/insight3.jpg",
     tag: "LEAN",
     title: "Mengenal 8 Waste: DOWNTIME",
     caption:
       "Sudahkah Anda Mengenal DOWNTIME?\n\nBanyak pemimpin manufaktur berfokus pada adopsi teknologi terbaru untuk meningkatkan profit.\n\nNamun dalam praktiknya, peningkatan kinerja sering kali bukan berasal dari menambah, melainkan dari mengurangi pemborosan.\n\nContinuous Improvement dimulai dari langkah sederhana:\n- Gemba Walk: Lihat langsung masalah di lapangan\n- Keterlibatan Tim: Bangun budaya problem solving\n- Standarisasi: Kunci praktik terbaik sebagai standar kerja\n\nDari 8 waste di atas, mana yang paling sering Anda temui di industri Anda?\n\n#Manufacturing #ContinuousImprovement #LeanManufacturing #OperationsExcellence #Efisiensi #DOWNTIME #Kaizen #IndustrialEngineering",
   },
   {
-    image: "/insight4.jpg",
+    image: "/insight/insight4.jpg",
     tag: "VSM",
     title: "Value Stream Mapping",
     caption:
       "Banyak proses terlihat sibuk: meeting penuh, approval panjang, laporan jalan.\nNamun hasilnya tetap sama — lead time lama, inventory menumpuk, customer menunggu.\n\nDi sinilah Value Stream Mapping (VSM) berperan.\n\nVSM memetakan aliran end-to-end dari permintaan customer hingga produk/jasa diterima, mencakup aliran material, informasi, dan waktu.\n\nFakta di lapangan:\n- < 20% aktivitas benar-benar bernilai tambah\n- Sisanya adalah waiting, rework, overprocessing, dan handoff yang tidak perlu.\n\nVSM tidak mencari siapa yang salah, tetapi membuka waste yang tertanam dalam sistem kerja.\n\nVSM adalah cermin untuk melihat realita proses apa adanya.\n\nPelajari cara membongkar waste tersembunyi lewat Workshop Value Stream Mapping. DM kami untuk detail program.\n\n#ValueStreamMapping #LeanManagement #WasteReduction #OperationalExcellence #ContinuousImprovement #SupplyChain",
   },
   {
-    image: "/insight5.jpg",
+    image: "/insight/insight5.jpg",
     tag: "SUPPLY CHAIN",
     title: "Missed Planning Crisis",
     caption:
       "Kenapa supply chain sering gagal, padahal forecasting sudah 'cukup akurat'?\n\nJawabannya sering kali bukan pada angka forecast, melainkan pada missed planning.\n\nBeberapa masalah yang sering terjadi:\n- Planning dibuat terlalu statis (bulanan, tidak adaptif)\n- Data historis dipercaya tanpa mempertimbangkan konteks aktual\n- Sistem planning ada, tetapi tidak digunakan dalam keputusan harian\n- Tidak ada kejelasan: deviasi terjadi karena salah rencana atau salah eksekusi\n\nPraktik sederhana namun berdampak:\n- Rolling planning, bukan one-shot plan\n- Planning freeze zone yang jelas\n- Event-based planning (cuaca, promo, regulasi, disruption)\n- Accountability: setiap deviasi harus punya sebab\n\nSupply chain yang tangguh bukan yang paling akurat merencanakan, melainkan yang paling cepat belajar dan beradaptasi.\n\n#SupplyChain #Logistics #Planning #OperationalExcellence #SupplyChainManagement #LogistikIndonesia",
   },
   {
-    image: "/insight6.jpg",
+    image: "/insight/insight6.jpg",
     tag: "MRP",
     title: "MRP: Jantung Supply Chain",
     caption:
       "Dalam supply chain modern, MRP bukan hanya alat hitung kebutuhan material.\nIa adalah fondasi stabilitas operasional.\n\nTanpa MRP yang solid, organisasi akan mudah terjebak pada:\n- Stockout & overinventory\n- Produksi tidak sinkron dengan demand\n- Lead time tidak terkendali\n- Biaya operasional yang terus meningkat\n\nSebaliknya, MRP yang efektif mampu menjadi:\n- Decision driver, bukan sekadar reporting tool\n- Penghubung antara demand, produksi, dan procurement\n- Enabler untuk service level yang lebih konsisten\n- Fondasi menuju digital supply chain yang resilien\n\nApakah MRP di perusahaan Anda sudah menjadi strategic decision driver? Atau masih sekadar dashboard monitoring?\n\n#SupplyChain #MRP #OperationsManagement #InventoryManagement #DigitalSupplyChain #OperationalExcellence #LeanCoreConsulting",
+  },
+  {
+    image: "/insight/insight7.png",
+    tag: "MRP",
+    title: "MRP: Jantung Supply Chain",
+    caption:
+      "Dalam supply chain modern, MRP bukan hanya alat hitung kebutuhan material.\nIa adalah fondasi stabilitas operasional.\n\nTanpa MRP yang solid, organisasi akan mudah terjebak pada:\n- Stockout & overinventory\n- Produksi tidak sinkron dengan demand\n- Lead time tidak terkendali\n- Biaya operasional yang terus meningkat\n\nSebaliknya, MRP yang efektif mampu menjadi:\n- Decision driver, bukan sekadar reporting tool\n- Penghubung antara demand, produksi, dan procurement\n- Enabler untuk service level yang lebih konsisten\n- Fondasi menuju digital supply chain yang resilien\n\nApakah MRP di perusahaan Anda sudah menjadi strategic decision driver? Atau masih sekadar dashboard monitoring?\n\n#SupplyChain #MRP #OperationsManagement #InventoryManagement #DigitalSupplyChain #OperationalExcellence #LeanCoreConsulting",
+  },
+  {
+    image: "/insight/insight8.png",
+    tag: "SRM",
+    title: "Supplier Relationship Management: Dari Transaksi ke Strategic Partnership",
+    caption:
+      "Banyak organisasi masih melihat supplier sebagai cost center.\n\nPadahal, dengan pendekatan SRM yang matang, supplier dapat menjadi:\n- Mitra jangka panjang berbasis kepercayaan\n- Pihak yang berbagi risiko & insentif secara selaras\n- Co-creator dalam inovasi dan peningkatan kinerja\n\nManfaat nyata dari SRM yang terstruktur:\n✔ Risiko pasokan menurun\n✔ Konflik kontraktual berkurang\n✔ Peningkatan inovasi & improvement\n✔ Respons pasar lebih cepat\n\nPertanyaannya: apakah hubungan supplier Anda masih transaksional, atau sudah strategis?\n\n#SupplierRelationshipManagement #SupplyChainStrategy #ProcurementExcellence #BusinessTransformation #LeanManagement #Leadership",
+  },
+  {
+    image: "/insight/insight9.jpg",
+    tag: "TPM",
+    title: "Mengapa Banyak Implementasi TPM Gagal di Perusahaan Manufaktur?",
+    caption:
+      "Banyak perusahaan mengadopsi Total Productive Maintenance (TPM) dengan tujuan meningkatkan produktivitas, mengurangi downtime, dan mencapai zero breakdown.\n\nNamun dalam praktiknya, tidak sedikit implementasi TPM yang berhenti di tengah jalan — atau sekadar menjadi slogan di dinding pabrik.\n\nBeberapa penyebab yang sering terjadi:\n\n• TPM dianggap hanya program maintenance\nPadahal TPM melibatkan seluruh organisasi, terutama operator melalui autonomous maintenance.\n\n• Kurangnya komitmen manajemen\nTPM bukan sekadar program teknis, tetapi perubahan budaya kerja.\n\n• Fokus pada tools, bukan mindset\nChecklist dan form ada, tetapi budaya ownership terhadap mesin belum terbentuk.\n\n• Target terlalu ambisius tanpa fondasi\nBanyak perusahaan ingin langsung mencapai OEE kelas dunia tanpa stabilisasi proses terlebih dahulu.\n\n• Tidak terintegrasi dengan sistem operasional lain\nTPM seharusnya berjalan bersama Lean Manufacturing, Quality Management, dan Continuous Improvement.\n\nPada akhirnya, TPM gagal bukan karena konsepnya salah — tetapi karena implementasinya tidak menyentuh akar budaya organisasi.\n\nJika dijalankan dengan disiplin dan keterlibatan seluruh level organisasi, TPM tetap menjadi salah satu pendekatan paling kuat untuk meningkatkan reliability dan operational excellence.\n\nPertanyaannya: Apakah TPM di perusahaan Anda sudah menjadi budaya, atau masih sekadar program?\n\n#Manufacturing #TPM #OperationalExcellence #LeanManufacturing #ContinuousImprovement",
+  },
+  {
+    image: "/insight/insight10.png",
+    tag: "Inventory",
+    title: "Stok Optimal Bukan yang Terbanyak — Tapi yang Paling Tepat",
+    caption:
+      "Banyak perusahaan masih melihat stok bahan baku hanya sebagai persediaan yang harus selalu tersedia di gudang.\n\nPadahal dalam praktik operasi modern, inventory adalah instrumen strategis yang memengaruhi efisiensi biaya sekaligus kelancaran produksi.\n\nDalam praktiknya, perusahaan sering terjebak pada dua kondisi ekstrem.\n\nOverstock menyebabkan biaya penyimpanan meningkat, cash flow tertekan, dan risiko barang menjadi obsolete. Sebaliknya, understock dapat mengganggu produksi, memperpanjang lead time, bahkan menyebabkan kehilangan peluang pasar.\n\nKarena itu, pengelolaan stok tidak cukup hanya dengan menambah atau mengurangi persediaan. Yang lebih penting adalah mengoptimalkan stok melalui:\n- Perencanaan berbasis data permintaan\n- Perhitungan safety stock yang tepat\n- Kolaborasi yang baik dengan pemasok\n\nPada akhirnya, tujuan utama manajemen inventory adalah menemukan keseimbangan antara efisiensi biaya dan kontinuitas operasi.\n\nDalam supply chain modern, stok yang optimal bukan yang paling banyak — tetapi yang paling tepat.\n\n#SupplyChainManagement #InventoryManagement #OperationsManagement #SupplyChain #Manufacturing",
   },
 ];
 
@@ -100,7 +128,6 @@ export default function Insights() {
           text-align: center;
         }
 
-        /* Dark overlay to maintain text readability */
         .hero-overlay {
           position: absolute;
           inset: 0;
@@ -155,9 +182,6 @@ export default function Insights() {
           letter-spacing: 0.2em;
           color: var(--yellow);
           margin-bottom: 28px;
-          opacity: ${visible ? 1 : 0};
-          transform: translateY(${visible ? 0 : "20px"});
-          transition: opacity 0.6s ease, transform 0.6s ease;
         }
 
         .hero-eyebrow::before,
@@ -171,16 +195,13 @@ export default function Insights() {
         }
 
         .hero-title {
-          font-family: 'Roboto',;
+          font-family: 'DM Sans', sans-serif;
           font-size: clamp(48px, 7vw, 88px);
           font-weight: 800;
           color: var(--white);
           line-height: 1.05;
           letter-spacing: -0.02em;
           position: relative;
-          opacity: ${visible ? 1 : 0};
-          transform: translateY(${visible ? 0 : "30px"});
-          transition: opacity 0.7s ease 0.1s, transform 0.7s ease 0.1s;
           margin-bottom: 24px;
         }
 
@@ -195,9 +216,6 @@ export default function Insights() {
           max-width: 520px;
           line-height: 1.7;
           position: relative;
-          opacity: ${visible ? 1 : 0};
-          transform: translateY(${visible ? 0 : "20px"});
-          transition: opacity 0.7s ease 0.2s, transform 0.7s ease 0.2s;
           margin-bottom: 48px;
         }
 
@@ -207,8 +225,6 @@ export default function Insights() {
           flex-direction: column;
           align-items: center;
           gap: 10px;
-          opacity: ${visible ? 1 : 0};
-          transition: opacity 0.7s ease 0.4s;
         }
 
         .hero-scroll-label {
@@ -266,7 +282,7 @@ export default function Insights() {
         }
 
         .section-title {
-          font-family: 'Roboto',;
+          font-family: 'DM Sans', sans-serif;
           font-size: clamp(32px, 4vw, 48px);
           font-weight: 700;
           color: var(--navy);
@@ -296,20 +312,28 @@ export default function Insights() {
           padding: 48px 48px 80px;
           max-width: 1200px;
           margin: 0 auto;
+          /* align-items: start so cards don't stretch to match tallest */
+          align-items: start;
         }
 
         /* ── CARD ── */
+        /*
+          Key fix: remove fixed height on card-wrapper.
+          Use a flip container that adapts to content height.
+          We achieve the flip effect by keeping both faces in the DOM
+          but using visibility + rotateY. The front face is the natural
+          height driver; the back mirrors that with min-height.
+        */
         .card-wrapper {
           position: relative;
-          height: 650px;
           cursor: pointer;
+          /* perspective for 3D flip */
           perspective: 1200px;
         }
 
         .card-inner {
           position: relative;
           width: 100%;
-          height: 100%;
           transform-style: preserve-3d;
           transition: transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -319,16 +343,15 @@ export default function Insights() {
         }
 
         .card-face {
-          position: absolute;
-          inset: 0;
           backface-visibility: hidden;
           -webkit-backface-visibility: hidden;
           border-radius: 4px;
           overflow: hidden;
         }
 
-        /* Front */
+        /* FRONT — natural height, in flow */
         .card-front {
+          position: relative; /* in normal flow → sets card height */
           background: var(--white);
           border: 1px solid var(--gray-200);
           box-shadow: 0 4px 24px rgba(0,66,118,0.08);
@@ -337,58 +360,44 @@ export default function Insights() {
           flex-direction: column;
         }
 
-        .card-wrapper:hover .card-front {
+        .card-wrapper:not(.flipped):hover .card-front {
           box-shadow: 0 12px 40px rgba(0,66,118,0.15);
           transform: translateY(-4px);
         }
 
-        .card-wrapper.flipped:hover .card-front {
-          transform: none;
-        }
-
+        /* Image: use aspect-ratio so full image shows, no cropping */
         .card-image-wrap {
           position: relative;
-          flex: 0 0 520px;
+          width: 100%;
+          /* Portrait infographic images — use 4:5 ratio to show most content */
+          aspect-ratio: 4 / 5;
           overflow: hidden;
           background: var(--gray-100);
+          flex-shrink: 0;
         }
 
         .card-image-wrap img {
           width: 100%;
           height: 100%;
           object-fit: cover;
+          object-position: top center;
           transition: transform 0.5s ease;
         }
 
-        .card-wrapper:hover .card-image-wrap img {
-          transform: scale(1.04);
+        .card-wrapper:not(.flipped):hover .card-image-wrap img {
+          transform: scale(1.03);
         }
 
         .card-image-overlay {
           position: absolute;
           inset: 0;
-          background: linear-gradient(to bottom, transparent 40%, rgba(0,42,78,0.7) 100%);
-        }
-
-        .card-image-placeholder {
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-
-        .card-image-placeholder-icon {
-          font-size: 48px;
-          opacity: 0.2;
+          background: linear-gradient(to bottom, transparent 55%, rgba(0,42,78,0.55) 100%);
         }
 
         .card-num {
           position: absolute;
           top: 16px;
           left: 16px;
-          font-family: 'Roboto',;
           font-size: 13px;
           font-weight: 700;
           color: rgba(255,255,255,0.5);
@@ -409,21 +418,18 @@ export default function Insights() {
         }
 
         .card-front-content {
-          padding: 24px 24px 20px;
-          flex: 1;
+          padding: 24px 24px 22px;
           display: flex;
           flex-direction: column;
-          justify-content: space-between;
+          gap: 16px;
           border-top: 3px solid var(--yellow);
         }
 
         .card-title {
-          font-family: 'Roboto',;
-          font-size: 20px;
+          font-size: 18px;
           font-weight: 700;
           color: var(--navy);
-          line-height: 1.3;
-          margin-bottom: 16px;
+          line-height: 1.35;
         }
 
         .card-read-cta {
@@ -441,7 +447,7 @@ export default function Insights() {
           transition: background 0.2s, color 0.2s;
         }
 
-        .card-wrapper:hover .card-read-cta {
+        .card-wrapper:not(.flipped):hover .card-read-cta {
           background: var(--navy);
           color: var(--yellow);
         }
@@ -450,16 +456,20 @@ export default function Insights() {
           transition: transform 0.2s;
         }
 
-        .card-wrapper:hover .card-read-arrow {
+        .card-wrapper:not(.flipped):hover .card-read-arrow {
           transform: translateX(4px);
         }
 
-        /* Back */
+        /* BACK — absolutely positioned, same size as front */
         .card-back {
+          position: absolute;
+          inset: 0;
           background: var(--navy);
           transform: rotateY(180deg);
           display: flex;
           flex-direction: column;
+          border-radius: 4px;
+          overflow: hidden;
         }
 
         .card-back-header {
@@ -516,12 +526,11 @@ export default function Insights() {
         .card-back-body::-webkit-scrollbar-thumb { background: rgba(250,204,21,0.4); border-radius: 2px; }
 
         .card-back-title {
-          font-family: 'Roboto',;
-          font-size: 18px;
+          font-size: 17px;
           font-weight: 700;
           color: var(--white);
           margin-bottom: 14px;
-          line-height: 1.3;
+          line-height: 1.35;
         }
 
         .card-back-caption {
@@ -558,13 +567,8 @@ export default function Insights() {
           box-shadow: 0 12px 40px rgba(37,211,102,0.4);
         }
 
-        .wa-float-label {
-          display: none;
-        }
-
-        @media (min-width: 768px) {
-          .wa-float-label { display: inline; }
-        }
+        .wa-float-label { display: none; }
+        @media (min-width: 768px) { .wa-float-label { display: inline; } }
 
         @media (max-width: 768px) {
           .hero { padding: 80px 24px 80px; }
@@ -576,7 +580,6 @@ export default function Insights() {
       <div className="insights-page">
         {/* ── HERO ── */}
         <section className="hero">
-          {/* Background image overlay layers */}
           <div className="hero-overlay" />
           <div className="hero-grid" />
           <div className="hero-accent" />
@@ -622,7 +625,7 @@ export default function Insights() {
               onClick={() => setFlipped(flipped === index ? null : index)}
             >
               <div className="card-inner">
-                {/* FRONT */}
+                {/* FRONT — natural height, drives card size */}
                 <div className="card-face card-front">
                   <div className="card-image-wrap">
                     <Image
@@ -645,7 +648,7 @@ export default function Insights() {
                   </div>
                 </div>
 
-                {/* BACK */}
+                {/* BACK — absolutely fills the same space as front */}
                 <div className="card-face card-back">
                   <div className="card-back-header">
                     <span className="card-back-tag">{item.tag}</span>

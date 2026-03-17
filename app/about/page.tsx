@@ -2,37 +2,39 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const partnerLogos = [
-  "/mapnGroup.png",
-  "/bankArthaya.png",
-  "/kimiaFarma.png",
-  "/cocaCola.png",
-  "/mandiri.png",
-  "/sig.jpg",
-  "/pmpGroup.png",
-  "/HMSampoerna.png",
-  "/mpmMotor.jpg",
-  "/univPertahanan.jpg",
-  "/perhimpunan.png",
-  "/pratamaGroup.png",
-  "/uc.jpg",
-  "/kementrianPertahanan.png",
-  "/tutWuri.jpg",
-  "/ot.png",
-  "/cbos.jpg",
-  "/idFood.png",
-  "/silog.jpg",
-  "/maesaGroup.jpg",
-  "/ubmBiscuits.png",
-  "/visiniaga.png",
-  "/pln.png",
-  "/kai.png",
-  "/kiabadi.png",
-  "/freeport.png",
-  "/logo_global.png",
-  "/supra.png",
+  "/partner/mapnGroup.png",
+  "/partner/bankArthaya.png",
+  "/partner/kimiaFarma.png",
+  "/partner/cocaCola.png",
+  "/partner/mandiri.png",
+  "/partner/sig.jpg",
+  "/partner/pmpGroup.png",
+  "/partner/HMSampoerna.png",
+  "/partner/mpmMotor.jpg",
+  "/partner/univPertahanan.jpg",
+  "/partner/perhimpunan.png",
+  "/partner/pratamaGroup.png",
+  "/partner/uc.jpg",
+  "/partner/kementrianPertahanan.png",
+  "/partner/tutWuri.jpg",
+  "/partner/ot.png",
+  "/partner/cbos.jpg",
+  "/partner/idFood.png",
+  "/partner/silog.jpg",
+  "/partner/maesaGroup.jpg",
+  "/partner/ubmBiscuits.png",
+  "/partner/visiniaga.png",
+  "/partner/pln.png",
+  "/partner/kai.png",
+  "/partner/kiabadi.png",
+  "/partner/freeport.png",
+  "/partner/logo_global.png",
+  "/partner/supra.png",
+  "/partner/rodaLink.jpg",
+  "/partner/petroKimia.png",
 ];
 
 const boardMembers = [
@@ -94,7 +96,7 @@ const teamMembers = [
     expertise: [
       "Client Relationship Management",
       "Account & Pipeline Management",
-    ]
+    ],
   },
 ];
 
@@ -102,48 +104,84 @@ const trainers = [
   {
     name: "Dr. Widya Arif Sofyan Kurniawan, S.M., M.M. CSBA",
     position: "VPC H.M. Sampoerna TPO",
+    linkedin: "https://www.linkedin.com/",
     expertise: ["Retail Management"],
   },
   {
     name: "Lala Setiany Wee, S.E., M.M., CSBA",
     position: "Owner of Mitra Sukses Group, CCA Indonesia",
+    linkedin: "https://www.linkedin.com/",
     expertise: ["Retail Management"],
   },
   {
     name: "Dr. Ir. Elkana Timotius, S.T., M.M., M.T., CPM (Asia), Dip.RetMgt, IPU., CSCM",
     position: "GM Retail Business Rodalink Indonesia",
+    linkedin: "https://www.linkedin.com/in/elkanatimotius/",
     expertise: ["Retail Management"],
   },
   {
     name: "Agus Darsono, MM., CSBA",
     position: "Director PT. United Waru Biscuit Manufactory",
+    linkedin: "https://www.linkedin.com/in/agus-darsono-a300b438/",
     expertise: ["Retail Management"],
   },
   {
     name: "Edward Cesario, CSCM",
     position: "Director of Supply Chain in OT Group",
+    linkedin: "https://www.linkedin.com/in/edward-cesario-cscm-8235561b/",
     expertise: ["Supply Chain Management"],
   },
   {
     name: "Eufemia Citra, M.Farm, CSCM",
     position: "PPIC & Warehouse Manager Mega Lifesciences Indonesia",
+    linkedin:
+      "https://www.linkedin.com/in/apt-eufemia-citra-m-farm-cscm-1450a6102/",
     expertise: ["Supply Chain Management"],
   },
   {
     name: "Dr. Ir. Bagusranu Wahyudi Putra, ST., MM., MMT., CSCA., CSCM",
     position:
       "Assistant Vice President in Port Planning & Control - PT Petrokimia Gresik",
+    linkedin: "https://www.linkedin.com/in/bagusranu/",
     expertise: ["Supply Chain Management"],
   },
   {
     name: "apt. Widia Rahmi Mulyanis, S.Farm., CSBA",
     position: "PT. Kimia Farma Apotek - Pharmacy Manager",
+    linkedin: "https://www.linkedin.com/in/widia-rahmi-mulyanis-355031205/",
     expertise: ["Strategic Business Analyst"],
   },
   {
     name: "Ir. Lewi S. Kristianto, M.M. CSBA",
     position: "Director PT. Visiniaga Mitra Kreasindo",
+    linkedin: "https://www.linkedin.com/in/ichtus/",
     expertise: ["Strategic Business Analyst"],
+  },
+  {
+    name: "Wiraatmaja Lookman",
+    position: "Direktur dan Ahli K3 Umum PT. Lookman Djaja Logistic",
+    linkedin: "https://www.linkedin.com/in/wiraatmaja-lookman-27427179",
+    expertise: ["Logistics Management"],
+  },
+  {
+    name: "Dr. Ferdy Yap, S.E., M.M.",
+    position: "Direktur Utama Global Trans Logistics",
+    linkedin: "https://www.linkedin.com/in/ferdy-yap-4a234a389",
+    expertise: ["Logistics Operations"],
+  },
+  {
+    name: "Dr. Andi Hendra Paluseri",
+    position:
+      "Sr Expert Stakeholder Advocacy | Chief ENC BUMN Hijau | Deputi ESDM ACEXI | Sekjen IAE ITB Pertamina",
+    linkedin: "https://www.linkedin.com/in/dr-andi-hendra-paluseri-a26b0284",
+    expertise: ["Stakeholder Advocacy"],
+  },
+  {
+    name: "Ian Gibranata",
+    position:
+      "Operations Excellence & Management Specialist at Sinar Baja Electric | LSS Green Belt Certified",
+    linkedin: "https://www.linkedin.com/in/ian-gibranata-82974725a",
+    expertise: ["Operational Excellence"],
   },
 ];
 
@@ -175,7 +213,45 @@ const primeValues = [
   },
 ];
 
+// Tag color map
+const expertiseColors: Record<
+  string,
+  { bg: string; color: string; border: string }
+> = {
+  "Retail Management": {
+    bg: "rgba(124,58,237,0.12)",
+    color: "#7C3AED",
+    border: "rgba(124,58,237,0.3)",
+  },
+  "Supply Chain Management": {
+    bg: "rgba(0,66,118,0.10)",
+    color: "#004276",
+    border: "rgba(0,66,118,0.3)",
+  },
+  "Strategic Business Analyst": {
+    bg: "rgba(15,118,110,0.10)",
+    color: "#0F766E",
+    border: "rgba(15,118,110,0.3)",
+  },
+  "Logistics Management": {
+    bg: "rgba(234,88,12,0.10)",
+    color: "#C2410C",
+    border: "rgba(234,88,12,0.3)",
+  },
+  "Stakeholder Advocacy": {
+    bg: "rgba(2,132,199,0.10)",
+    color: "#0369A1",
+    border: "rgba(2,132,199,0.3)",
+  },
+  "Operational Excellence": {
+    bg: "rgba(22,163,74,0.10)",
+    color: "#15803D",
+    border: "rgba(22,163,74,0.3)",
+  },
+};
+
 export default function AboutCompany() {
+  const [showAllTrainers, setShowAllTrainers] = useState(false);
   useEffect(() => {
     const els = document.querySelectorAll("[data-animate]");
     const observer = new IntersectionObserver(
@@ -561,7 +637,7 @@ export default function AboutCompany() {
         }
 
         /* ══════════════════════════════════════════
-           ── EXECUTIVE BOARD (NEW DESIGN) ──
+           ── EXECUTIVE BOARD ──
         ══════════════════════════════════════════ */
         .exec-section { background: #fff; }
 
@@ -576,7 +652,6 @@ export default function AboutCompany() {
           border-radius: 4px;
           overflow: hidden;
           cursor: pointer;
-          /* Fixed 1:1.35 aspect ratio so all cards are identical */
           aspect-ratio: 3 / 4;
           box-shadow: 0 8px 32px rgba(0,42,78,0.14);
           transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
@@ -587,7 +662,6 @@ export default function AboutCompany() {
           box-shadow: 0 24px 60px rgba(0,42,78,0.22);
         }
 
-        /* Full-bleed photo */
         .exec-photo {
           position: absolute;
           inset: 0;
@@ -598,11 +672,8 @@ export default function AboutCompany() {
           transition: transform 0.6s ease;
           display: block;
         }
-        .exec-card:hover .exec-photo {
-          transform: scale(1.05);
-        }
+        .exec-card:hover .exec-photo { transform: scale(1.05); }
 
-        /* Dark gradient from bottom */
         .exec-gradient {
           position: absolute;
           inset: 0;
@@ -616,7 +687,6 @@ export default function AboutCompany() {
           transition: opacity 0.4s ease;
         }
 
-        /* Gold top accent bar */
         .exec-top-bar {
           position: absolute;
           top: 0; left: 0; right: 0;
@@ -625,7 +695,6 @@ export default function AboutCompany() {
           z-index: 3;
         }
 
-        /* LinkedIn badge top-right */
         .exec-linkedin {
           position: absolute;
           top: 14px; right: 14px;
@@ -640,22 +709,15 @@ export default function AboutCompany() {
           transition: background 0.2s, transform 0.25s;
           box-shadow: 0 2px 8px rgba(0,0,0,0.3);
         }
-        .exec-linkedin:hover {
-          background: #004182;
-          transform: scale(1.12);
-        }
+        .exec-linkedin:hover { background: #004182; transform: scale(1.12); }
 
-        /* Content pinned to bottom */
         .exec-content {
           position: absolute;
           bottom: 0; left: 0; right: 0;
           z-index: 3;
           padding: 24px 22px 22px;
-          transform: translateY(0);
-          transition: transform 0.35s ease;
         }
 
-        /* Position badge */
         .exec-position-badge {
           display: inline-block;
           background: #FACC15;
@@ -670,7 +732,7 @@ export default function AboutCompany() {
         }
 
         .exec-name {
-          font-family: 'Roboto', ;
+          font-family: 'Roboto',;
           font-size: 15px;
           font-weight: 700;
           color: #fff;
@@ -678,17 +740,13 @@ export default function AboutCompany() {
           margin-bottom: 14px;
         }
 
-        /* Expertise pills – hidden by default, slide up on hover */
         .exec-expertise {
           overflow: hidden;
           max-height: 0;
           opacity: 0;
           transition: max-height 0.4s ease, opacity 0.35s ease;
         }
-        .exec-card:hover .exec-expertise {
-          max-height: 200px;
-          opacity: 1;
-        }
+        .exec-card:hover .exec-expertise { max-height: 200px; opacity: 1; }
         .exec-expertise-label {
           font-size: 8px;
           font-weight: 700;
@@ -696,11 +754,7 @@ export default function AboutCompany() {
           color: rgba(255,255,255,0.45);
           margin-bottom: 8px;
         }
-        .exec-expertise-pills {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 5px;
-        }
+        .exec-expertise-pills { display: flex; flex-wrap: wrap; gap: 5px; }
         .exec-pill {
           background: rgba(255,255,255,0.10);
           border: 1px solid rgba(250,204,21,0.35);
@@ -713,7 +767,7 @@ export default function AboutCompany() {
         }
 
         /* ══════════════════════════════════════════
-           ── OUR TEAM (NEW DESIGN) ──
+           ── OUR TEAM ──
         ══════════════════════════════════════════ */
         .team-section { background: #F0F4F8; }
 
@@ -748,9 +802,7 @@ export default function AboutCompany() {
           transition: transform 0.6s ease;
           display: block;
         }
-        .team-card:hover .team-photo {
-          transform: scale(1.05);
-        }
+        .team-card:hover .team-photo { transform: scale(1.05); }
 
         .team-gradient {
           position: absolute;
@@ -764,7 +816,6 @@ export default function AboutCompany() {
           );
         }
 
-        /* Yellow top accent bar */
         .team-top-bar {
           position: absolute;
           top: 0; left: 0; right: 0;
@@ -773,7 +824,6 @@ export default function AboutCompany() {
           z-index: 3;
         }
 
-        /* LinkedIn badge top-right */
         .team-linkedin {
           position: absolute;
           top: 14px; right: 14px;
@@ -788,10 +838,7 @@ export default function AboutCompany() {
           transition: background 0.2s, transform 0.25s;
           box-shadow: 0 2px 8px rgba(0,0,0,0.3);
         }
-        .team-linkedin:hover {
-          background: #004182;
-          transform: scale(1.12);
-        }
+        .team-linkedin:hover { background: #004182; transform: scale(1.12); }
 
         .team-content {
           position: absolute;
@@ -829,10 +876,7 @@ export default function AboutCompany() {
           opacity: 0;
           transition: max-height 0.4s ease, opacity 0.35s ease;
         }
-        .team-card:hover .team-expertise {
-          max-height: 180px;
-          opacity: 1;
-        }
+        .team-card:hover .team-expertise { max-height: 180px; opacity: 1; }
         .team-expertise-label {
           font-size: 8px;
           font-weight: 700;
@@ -840,11 +884,7 @@ export default function AboutCompany() {
           color: rgba(255,255,255,0.40);
           margin-bottom: 7px;
         }
-        .team-expertise-pills {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 5px;
-        }
+        .team-expertise-pills { display: flex; flex-wrap: wrap; gap: 5px; }
         .team-pill {
           background: rgba(255,255,255,0.08);
           border: 1px solid rgba(250,204,21,0.30);
@@ -856,57 +896,203 @@ export default function AboutCompany() {
           backdrop-filter: blur(4px);
         }
 
-        /* ── TRAINERS ── */
+        /* ══════════════════════════════════════════
+           ── ASSOCIATE TRAINERS (NEW DESIGN) ──
+        ══════════════════════════════════════════ */
         .trainers-section { background: #fff; }
+
         .trainers-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: 16px;
+          gap: 20px;
         }
+
         .trainer-card {
+          position: relative;
           background: #F8FAFC;
           border: 1px solid #E2E8F0;
-          border-left: 3px solid #004276;
-          padding: 20px 20px 20px 22px;
+          border-radius: 4px;
+          overflow: hidden;
           display: flex;
           flex-direction: column;
-          gap: 10px;
-          transition: box-shadow 0.2s, border-left-color 0.2s;
+          transition: box-shadow 0.3s ease, transform 0.3s ease;
         }
         .trainer-card:hover {
-          box-shadow: 0 6px 24px rgba(0,66,118,0.08);
-          border-left-color: #FACC15;
+          box-shadow: 0 12px 40px rgba(0,66,118,0.12);
+          transform: translateY(-4px);
         }
+
+        /* gold + navy gradient top accent */
+        .trainer-card::before {
+          content: '';
+          display: block;
+          height: 3px;
+          background: linear-gradient(to right, #FACC15, #004276);
+          flex-shrink: 0;
+        }
+
+        /* avatar + header row */
+        .trainer-header {
+          display: flex;
+          align-items: flex-start;
+          gap: 14px;
+          padding: 20px 20px 0;
+        }
+
+        /* monogram avatar */
+        .trainer-avatar {
+          flex-shrink: 0;
+          width: 52px;
+          height: 52px;
+          background: #004276;
+          border-radius: 3px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: background 0.2s;
+        }
+        .trainer-card:hover .trainer-avatar { background: #FACC15; }
+        .trainer-monogram {
+          font-family: 'DM Sans', sans-serif;
+          font-size: 18px;
+          font-weight: 700;
+          color: #FACC15;
+          letter-spacing: -0.02em;
+          transition: color 0.2s;
+          user-select: none;
+        }
+        .trainer-card:hover .trainer-monogram { color: #004276; }
+
+        /* name + position beside avatar */
+        .trainer-header-text {
+          flex: 1;
+          min-width: 0;
+        }
+
         .trainer-name {
           font-size: 13px;
-          font-weight: 600;
-          color: #004276;
+          font-weight: 700;
+          color: #1E293B;
           line-height: 1.45;
+          margin-bottom: 4px;
         }
+
         .trainer-position {
-          font-size: 12px;
+          font-size: 11.5px;
           font-weight: 300;
           color: #64748B;
           line-height: 1.5;
         }
-        .trainer-divider { height: 1px; background: #E2E8F0; }
+
+        /* body below header */
+        .trainer-body {
+          padding: 14px 20px 20px;
+          display: flex;
+          flex-direction: column;
+          flex: 1;
+          gap: 10px;
+        }
+
+        .trainer-divider {
+          height: 1px;
+          background: #E2E8F0;
+        }
+
+        .trainer-footer {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 10px;
+          flex-wrap: wrap;
+        }
+
         .trainer-expertise-label {
           font-size: 9px;
           font-weight: 700;
-          letter-spacing: 0.16em;
+          letter-spacing: 0.18em;
           color: #94A3B8;
           margin-bottom: 6px;
         }
+
+        .trainer-badges {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 6px;
+          flex: 1;
+        }
+
         .trainer-badge {
           display: inline-flex;
           align-items: center;
+          font-size: 10px;
+          font-weight: 600;
+          letter-spacing: 0.04em;
+          padding: 4px 10px;
+          border-radius: 2px;
+          border: 1px solid;
+        }
+
+        /* LinkedIn link */
+        .trainer-linkedin-btn {
+          flex-shrink: 0;
+          width: 32px;
+          height: 32px;
+          background: #0A66C2;
+          border-radius: 3px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-decoration: none;
+          transition: background 0.2s, transform 0.2s;
+          box-shadow: 0 2px 6px rgba(10,102,194,0.25);
+        }
+        .trainer-linkedin-btn:hover {
+          background: #004182;
+          transform: scale(1.1);
+        }
+
+        /* See More button */
+        .trainers-see-more {
+          margin-top: 32px;
+          display: flex;
+          justify-content: center;
+        }
+        .trainers-see-more-btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          background: #fff;
+          color: #004276;
+          font-size: 12px;
+          font-weight: 700;
+          letter-spacing: 0.12em;
+          padding: 12px 28px;
+          border: 1.5px solid #004276;
+          border-radius: 2px;
+          cursor: pointer;
+          transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.2s;
+        }
+        .trainers-see-more-btn:hover {
           background: #004276;
           color: #FACC15;
-          font-size: 10px;
-          font-weight: 700;
-          letter-spacing: 0.08em;
-          padding: 3px 10px;
-          border-radius: 2px;
+          border-color: #004276;
+          transform: translateY(-2px);
+        }
+        .trainers-see-more-arrow {
+          font-size: 14px;
+          transition: transform 0.3s ease;
+          display: inline-block;
+        }
+        .trainers-see-more-arrow.open {
+          transform: rotate(180deg);
+        }
+
+        /* Hidden trainers fade-in */
+        .trainer-card.trainer-hidden {
+          display: none;
+        }
+        .trainer-card.trainer-visible-extra {
+          animation: fadeUpIn 0.45s ease both;
         }
 
         /* ── PARTNERS ── */
@@ -967,10 +1153,11 @@ export default function AboutCompany() {
           .prime-grid { grid-template-columns: repeat(2, 1fr); }
           .exec-grid { grid-template-columns: 1fr; }
           .team-grid { grid-template-columns: 1fr; }
-          .trainers-grid { grid-template-columns: 1fr; }
+          .trainers-grid { grid-template-columns: repeat(2, 1fr); }
         }
         @media (max-width: 480px) {
           .prime-grid { grid-template-columns: 1fr; }
+          .trainers-grid { grid-template-columns: 1fr; }
         }
 
         /* Touch devices: always show expertise */
@@ -1035,11 +1222,35 @@ export default function AboutCompany() {
         {/* ── ABOUT US ── */}
         <section style={{ background: "#fff" }}>
           <div className="sec-wrap">
-            <p className="sec-eyebrow" data-animate data-anim="up" data-delay="0">WHO WE ARE</p>
-            <h2 className="sec-title" data-animate data-anim="up" data-delay="1">About Us</h2>
-            <div className="sec-divider" data-animate data-anim="fade" data-delay="2" />
+            <p
+              className="sec-eyebrow"
+              data-animate
+              data-anim="up"
+              data-delay="0"
+            >
+              WHO WE ARE
+            </p>
+            <h2
+              className="sec-title"
+              data-animate
+              data-anim="up"
+              data-delay="1"
+            >
+              About Us
+            </h2>
+            <div
+              className="sec-divider"
+              data-animate
+              data-anim="fade"
+              data-delay="2"
+            />
             <div className="about-us-grid">
-              <div className="about-us-text" data-animate data-anim="left" data-delay="2">
+              <div
+                className="about-us-text"
+                data-animate
+                data-anim="left"
+                data-delay="2"
+              >
                 <p>
                   Founded with a clear mission to elevate Indonesian
                   manufacturing through operational excellence,{" "}
@@ -1063,7 +1274,12 @@ export default function AboutCompany() {
                   operational discipline, and drive long-term, scalable growth.
                 </p>
               </div>
-              <div className="about-us-img" data-animate data-anim="right" data-delay="3">
+              <div
+                className="about-us-img"
+                data-animate
+                data-anim="right"
+                data-delay="3"
+              >
                 <img src="/aboutUs.jpeg" alt="Manufacturing Excellence" />
               </div>
             </div>
@@ -1073,14 +1289,39 @@ export default function AboutCompany() {
         {/* ── VISION & MISSION ── */}
         <section className="vm-section">
           <div className="sec-wrap">
-            <p className="sec-eyebrow" data-animate data-anim="up" data-delay="0">OUR DIRECTION</p>
-            <h2 className="sec-title" data-animate data-anim="up" data-delay="1">Vision & Mission</h2>
-            <div className="sec-divider" data-animate data-anim="fade" data-delay="2" />
+            <p
+              className="sec-eyebrow"
+              data-animate
+              data-anim="up"
+              data-delay="0"
+            >
+              OUR DIRECTION
+            </p>
+            <h2
+              className="sec-title"
+              data-animate
+              data-anim="up"
+              data-delay="1"
+            >
+              Vision & Mission
+            </h2>
+            <div
+              className="sec-divider"
+              data-animate
+              data-anim="fade"
+              data-delay="2"
+            />
 
             <div className="vm-card" data-animate data-anim="up" data-delay="2">
               <div className="vm-card-left">
                 <div className="vm-icon-wrap">
-                  <img src="/vision.svg" alt="Vision" width={28} height={28} style={{ filter: "brightness(0) invert(1)" }} />
+                  <img
+                    src="/vision.svg"
+                    alt="Vision"
+                    width={28}
+                    height={28}
+                    style={{ filter: "brightness(0) invert(1)" }}
+                  />
                 </div>
                 <p className="vm-card-label">Our Vision</p>
               </div>
@@ -1098,15 +1339,46 @@ export default function AboutCompany() {
             <div className="vm-card" data-animate data-anim="up" data-delay="3">
               <div className="vm-card-left">
                 <div className="vm-icon-wrap">
-                  <img src="/mission.svg" alt="Mission" width={28} height={28} style={{ filter: "brightness(0) invert(1)" }} />
+                  <img
+                    src="/mission.svg"
+                    alt="Mission"
+                    width={28}
+                    height={28}
+                    style={{ filter: "brightness(0) invert(1)" }}
+                  />
                 </div>
                 <p className="vm-card-label">Our Mission</p>
               </div>
               <div className="vm-card-right" style={{ display: "block" }}>
                 {[
-                  { text: (<>Driving <strong>efficiency and operational excellence</strong> through lean thinking and continuous improvement.</>) },
-                  { text: (<>Accelerating <strong>innovation and digitalization</strong> to create adaptive supply chains and smart factories.</>) },
-                  { text: (<>Developing <strong>industrial capabilities and leadership</strong> through world-class consulting, training, and certification programs.</>) },
+                  {
+                    text: (
+                      <>
+                        Driving{" "}
+                        <strong>efficiency and operational excellence</strong>{" "}
+                        through lean thinking and continuous improvement.
+                      </>
+                    ),
+                  },
+                  {
+                    text: (
+                      <>
+                        Accelerating{" "}
+                        <strong>innovation and digitalization</strong> to create
+                        adaptive supply chains and smart factories.
+                      </>
+                    ),
+                  },
+                  {
+                    text: (
+                      <>
+                        Developing{" "}
+                        <strong>industrial capabilities and leadership</strong>{" "}
+                        through world-class consulting, training, and
+                        certification programs.
+                      </>
+                    ),
+                  },
                 ].map((item, i) => (
                   <div key={i} className="vm-mission-item">
                     <div className="vm-num">{i + 1}</div>
@@ -1121,14 +1393,43 @@ export default function AboutCompany() {
         {/* ── PRIME VALUES ── */}
         <section className="prime-section">
           <div className="sec-wrap">
-            <p className="sec-eyebrow" data-animate data-anim="up" data-delay="0">OUR PRINCIPLES</p>
-            <h2 className="sec-title" data-animate data-anim="up" data-delay="1">PRIME Values</h2>
-            <p className="sec-desc" data-animate data-anim="up" data-delay="2">The core principles driving LeanCore's excellence.</p>
-            <div className="sec-divider" data-animate data-anim="fade" data-delay="3" />
+            <p
+              className="sec-eyebrow"
+              data-animate
+              data-anim="up"
+              data-delay="0"
+            >
+              OUR PRINCIPLES
+            </p>
+            <h2
+              className="sec-title"
+              data-animate
+              data-anim="up"
+              data-delay="1"
+            >
+              PRIME Values
+            </h2>
+            <p className="sec-desc" data-animate data-anim="up" data-delay="2">
+              The core principles driving LeanCore's excellence.
+            </p>
+            <div
+              className="sec-divider"
+              data-animate
+              data-anim="fade"
+              data-delay="3"
+            />
             <div className="prime-grid">
               {primeValues.map((v, i) => (
-                <div key={v.letter} className="prime-card" data-animate data-anim="up" data-delay={String(i + 1)}>
-                  <div className="prime-letter"><span>{v.letter}</span></div>
+                <div
+                  key={v.letter}
+                  className="prime-card"
+                  data-animate
+                  data-anim="up"
+                  data-delay={String(i + 1)}
+                >
+                  <div className="prime-letter">
+                    <span>{v.letter}</span>
+                  </div>
                   <h3 className="prime-title">{v.title}</h3>
                   <p className="prime-desc">{v.desc}</p>
                 </div>
@@ -1140,12 +1441,32 @@ export default function AboutCompany() {
         {/* ── EXECUTIVE BOARD ── */}
         <section className="exec-section">
           <div className="sec-wrap">
-            <p className="sec-eyebrow" data-animate data-anim="up" data-delay="0">LEADERSHIP</p>
-            <h2 className="sec-title" data-animate data-anim="up" data-delay="1">Executive Board</h2>
-            <p className="sec-desc" data-animate data-anim="up" data-delay="2">
-              Leadership team driving operational excellence across every engagement.
+            <p
+              className="sec-eyebrow"
+              data-animate
+              data-anim="up"
+              data-delay="0"
+            >
+              LEADERSHIP
             </p>
-            <div className="sec-divider" data-animate data-anim="fade" data-delay="3" />
+            <h2
+              className="sec-title"
+              data-animate
+              data-anim="up"
+              data-delay="1"
+            >
+              Executive Board
+            </h2>
+            <p className="sec-desc" data-animate data-anim="up" data-delay="2">
+              Leadership team driving operational excellence across every
+              engagement.
+            </p>
+            <div
+              className="sec-divider"
+              data-animate
+              data-anim="fade"
+              data-delay="3"
+            />
 
             <div className="exec-grid">
               {boardMembers.map((m, i) => (
@@ -1156,16 +1477,9 @@ export default function AboutCompany() {
                   data-anim="up"
                   data-delay={String(i + 1)}
                 >
-                  {/* Full-bleed photo */}
                   <img className="exec-photo" src={m.image} alt={m.name} />
-
-                  {/* Gradient overlay */}
                   <div className="exec-gradient" />
-
-                  {/* Gold top bar */}
                   <div className="exec-top-bar" />
-
-                  {/* LinkedIn */}
                   <a
                     href={m.linkedin}
                     target="_blank"
@@ -1181,18 +1495,16 @@ export default function AboutCompany() {
                       style={{ filter: "brightness(0) invert(1)" }}
                     />
                   </a>
-
-                  {/* Bottom content */}
                   <div className="exec-content">
                     <div className="exec-position-badge">{m.position}</div>
                     <h3 className="exec-name">{m.name}</h3>
-
-                    {/* Expertise – revealed on hover */}
                     <div className="exec-expertise">
                       <p className="exec-expertise-label">EXPERTISE</p>
                       <div className="exec-expertise-pills">
                         {m.expertise.map((e, j) => (
-                          <span key={j} className="exec-pill">{e}</span>
+                          <span key={j} className="exec-pill">
+                            {e}
+                          </span>
                         ))}
                       </div>
                     </div>
@@ -1206,12 +1518,32 @@ export default function AboutCompany() {
         {/* ── TEAM ── */}
         <section className="team-section">
           <div className="sec-wrap">
-            <p className="sec-eyebrow" data-animate data-anim="up" data-delay="0">OUR PEOPLE</p>
-            <h2 className="sec-title" data-animate data-anim="up" data-delay="1">Our Team</h2>
-            <p className="sec-desc" data-animate data-anim="up" data-delay="2">
-              The dedicated professionals behind LeanCore's daily operations and client success.
+            <p
+              className="sec-eyebrow"
+              data-animate
+              data-anim="up"
+              data-delay="0"
+            >
+              OUR PEOPLE
             </p>
-            <div className="sec-divider" data-animate data-anim="fade" data-delay="3" />
+            <h2
+              className="sec-title"
+              data-animate
+              data-anim="up"
+              data-delay="1"
+            >
+              Our Team
+            </h2>
+            <p className="sec-desc" data-animate data-anim="up" data-delay="2">
+              The dedicated professionals behind LeanCore's daily operations and
+              client success.
+            </p>
+            <div
+              className="sec-divider"
+              data-animate
+              data-anim="fade"
+              data-delay="3"
+            />
 
             <div className="team-grid">
               {teamMembers.map((m, i) => (
@@ -1222,16 +1554,9 @@ export default function AboutCompany() {
                   data-anim="up"
                   data-delay={String(i + 1)}
                 >
-                  {/* Full-bleed photo */}
                   <img className="team-photo" src={m.image} alt={m.name} />
-
-                  {/* Gradient overlay */}
                   <div className="team-gradient" />
-
-                  {/* Yellow top bar */}
                   <div className="team-top-bar" />
-
-                  {/* LinkedIn */}
                   <a
                     href={m.linkedin}
                     target="_blank"
@@ -1247,18 +1572,16 @@ export default function AboutCompany() {
                       style={{ filter: "brightness(0) invert(1)" }}
                     />
                   </a>
-
-                  {/* Bottom content */}
                   <div className="team-content">
                     <div className="team-position-badge">{m.position}</div>
                     <h3 className="team-name">{m.name}</h3>
-
-                    {/* Expertise – revealed on hover */}
                     <div className="team-expertise">
                       <p className="team-expertise-label">EXPERTISE</p>
                       <div className="team-expertise-pills">
                         {m.expertise.map((e, j) => (
-                          <span key={j} className="team-pill">{e}</span>
+                          <span key={j} className="team-pill">
+                            {e}
+                          </span>
                         ))}
                       </div>
                     </div>
@@ -1272,46 +1595,188 @@ export default function AboutCompany() {
         {/* ── ASSOCIATE TRAINERS ── */}
         <section className="trainers-section">
           <div className="sec-wrap">
-            <p className="sec-eyebrow" data-animate data-anim="up" data-delay="0">OUR EXPERTS</p>
-            <h2 className="sec-title" data-animate data-anim="up" data-delay="1">Associate Trainers</h2>
-            <p className="sec-desc" data-animate data-anim="up" data-delay="2">
-              Industry experts bringing real-world experience and strategic insight to elevate your organization.
+            <p
+              className="sec-eyebrow"
+              data-animate
+              data-anim="up"
+              data-delay="0"
+            >
+              OUR EXPERTS
             </p>
-            <div className="sec-divider" data-animate data-anim="fade" data-delay="3" />
+            <h2
+              className="sec-title"
+              data-animate
+              data-anim="up"
+              data-delay="1"
+            >
+              Associate Trainers
+            </h2>
+            <p className="sec-desc" data-animate data-anim="up" data-delay="2">
+              Industry experts bringing real-world experience and strategic
+              insight to elevate your organization.
+            </p>
+            <div
+              className="sec-divider"
+              data-animate
+              data-anim="fade"
+              data-delay="3"
+            />
+
             <div className="trainers-grid">
-              {trainers.map((t, i) => (
-                <div key={i} className="trainer-card" data-animate data-anim="up" data-delay={String((i % 3) + 1)}>
-                  <p className="trainer-name">{t.name}</p>
-                  <p className="trainer-position">{t.position}</p>
-                  <div className="trainer-divider" />
-                  <div>
-                    <p className="trainer-expertise-label">EXPERTISE</p>
-                    <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
-                      {t.expertise.map((e, j) => (
-                        <span key={j} className="trainer-badge">{e}</span>
-                      ))}
+              {trainers.map((t, i) => {
+                const isHidden = !showAllTrainers && i >= 6;
+                const isExtra = showAllTrainers && i >= 6;
+
+                const initials = t.name
+                  .split(" ")
+                  .filter((w) => /^[A-Z]/.test(w))
+                  .slice(0, 2)
+                  .map((w) => w[0])
+                  .join("");
+
+                const colors = expertiseColors[t.expertise[0]] ?? {
+                  bg: "rgba(0,66,118,0.08)",
+                  color: "#004276",
+                  border: "rgba(0,66,118,0.25)",
+                };
+
+                return (
+                  <div
+                    key={i}
+                    className={`trainer-card${isHidden ? " trainer-hidden" : ""}${isExtra ? " trainer-visible-extra" : ""}`}
+                    data-animate
+                    data-anim="up"
+                    data-delay={String((i % 3) + 1)}
+                  >
+                    {/* Header: avatar + name/position */}
+                    <div className="trainer-header">
+                      <div className="trainer-avatar">
+                        <span className="trainer-monogram">{initials}</span>
+                      </div>
+                      <div className="trainer-header-text">
+                        <p className="trainer-name">{t.name}</p>
+                        <p className="trainer-position">{t.position}</p>
+                      </div>
+                    </div>
+
+                    {/* Body: expertise + LinkedIn */}
+                    <div className="trainer-body">
+                      <div className="trainer-divider" />
+                      <p className="trainer-expertise-label">EXPERTISE</p>
+                      <div className="trainer-footer">
+                        <div className="trainer-badges">
+                          {t.expertise.map((e, j) => {
+                            const ec = expertiseColors[e] ?? {
+                              bg: "rgba(0,66,118,0.08)",
+                              color: "#004276",
+                              border: "rgba(0,66,118,0.25)",
+                            };
+                            return (
+                              <span
+                                key={j}
+                                className="trainer-badge"
+                                style={{
+                                  background: ec.bg,
+                                  color: ec.color,
+                                  borderColor: ec.border,
+                                }}
+                              >
+                                {e}
+                              </span>
+                            );
+                          })}
+                        </div>
+                        <a
+                          href={t.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="trainer-linkedin-btn"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          <img
+                            src="/linkedin.svg"
+                            alt="LinkedIn"
+                            width={15}
+                            height={15}
+                            style={{ filter: "brightness(0) invert(1)" }}
+                          />
+                        </a>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
+
+            {/* See More / See Less */}
+            {trainers.length > 6 && (
+              <div className="trainers-see-more">
+                <button
+                  className="trainers-see-more-btn"
+                  onClick={() => setShowAllTrainers((v) => !v)}
+                >
+                  {showAllTrainers
+                    ? "SEE LESS"
+                    : `SEE MORE (${trainers.length - 6} MORE)`}
+                  <span
+                    className={`trainers-see-more-arrow${showAllTrainers ? " open" : ""}`}
+                  >
+                    ▾
+                  </span>
+                </button>
+              </div>
+            )}
           </div>
         </section>
 
         {/* ── TRUSTED PARTNERS ── */}
         <section className="partners-section">
           <div className="sec-wrap" style={{ paddingBottom: 48 }}>
-            <p className="sec-eyebrow" data-animate data-anim="up" data-delay="0">COLLABORATIONS</p>
-            <h2 className="sec-title" data-animate data-anim="up" data-delay="1">Our Trusted Partners</h2>
+            <p
+              className="sec-eyebrow"
+              data-animate
+              data-anim="up"
+              data-delay="0"
+            >
+              COLLABORATIONS
+            </p>
+            <h2
+              className="sec-title"
+              data-animate
+              data-anim="up"
+              data-delay="1"
+            >
+              Our Trusted Partners
+            </h2>
             <p className="sec-desc" data-animate data-anim="up" data-delay="2">
               Collaborating with leading organizations across industries.
             </p>
-            <div className="sec-divider" data-animate data-anim="fade" data-delay="3" />
+            <div
+              className="sec-divider"
+              data-animate
+              data-anim="fade"
+              data-delay="3"
+            />
           </div>
-          <div className="marquee-wrap" style={{ paddingBottom: 80 }} data-animate data-anim="fade" data-delay="0">
+          <div
+            className="marquee-wrap"
+            style={{ paddingBottom: 80 }}
+            data-animate
+            data-anim="fade"
+            data-delay="0"
+          >
             <div className="marquee-track">
               {[...partnerLogos, ...partnerLogos].map((logo, i) => (
-                <div key={i} style={{ flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center", padding: "0 16px" }}>
+                <div
+                  key={i}
+                  style={{
+                    flexShrink: 0,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    padding: "0 16px",
+                  }}
+                >
                   <Image
                     src={logo}
                     alt="Partner Logo"

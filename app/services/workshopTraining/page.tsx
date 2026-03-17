@@ -769,7 +769,7 @@ export default function WorkshopTraining() {
               <div className="photo-showcase-grid">
                 <div className="showcase-img-wrap">
                   <Image
-                    src="/workshop.png"
+                    src="/services/workshop/workshop.png"
                     alt="Workshop"
                     width={480}
                     height={340}
@@ -778,7 +778,7 @@ export default function WorkshopTraining() {
                 </div>
                 <div className="showcase-img-wrap">
                   <Image
-                    src="/workshop2.png"
+                    src="/services/workshop/workshop1.png"
                     alt="Workshop"
                     width={480}
                     height={340}
@@ -787,7 +787,16 @@ export default function WorkshopTraining() {
                 </div>
                 <div className="showcase-img-wrap">
                   <Image
-                    src="/workshop1.png"
+                    src="/services/workshop/workshop2.png"
+                    alt="Workshop"
+                    width={480}
+                    height={340}
+                    className="object-contain"
+                  />
+                </div>
+                <div className="showcase-img-wrap">
+                  <Image
+                    src="/services/workshop/workshop3.jpeg"
                     alt="Workshop"
                     width={480}
                     height={340}

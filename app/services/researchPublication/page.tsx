@@ -56,7 +56,7 @@ const events = [
       "This series brings together experts in Supply Chain and Operations Management, delivering insightful discussions on current and relevant topics for professionals, academics, and students alike.",
       "Each session is led by experienced speakers and conducted free of charge via Zoom, making it accessible to a wide audience eager to enhance their knowledge and professional capability.",
     ],
-    images: ["/event.png", "/event1.png"],
+    images: ["/services/research/event.png", "/services/research/event1.png"],
     imgLayout: "three",
   },
   {
@@ -68,7 +68,7 @@ const events = [
       "These initiatives respond to emerging industrial challenges and institutional demand, focusing on statistical and data-driven analysis, operational strategy, and practical software applications.",
       "Through this partnership, LeanCore and CBOS provide an integrated platform connecting academic research with real-world business solutions, fostering analytical capability and innovation in operations management.",
     ],
-    images: ["/talkshow.png", "/talkshow1.png", "/talkshow2.png"],
+    images: ["/services/research/talkshow.png", "/services/research/talkshow1.png", "/services/research/talkshow2.png"],
     imgLayout: "three",
   },
   {
@@ -79,7 +79,7 @@ const events = [
       "In collaboration with the Center of Business Operations Strategy (CBOS) – Universitas Ciputra, LeanCore Consulting develops and provides research-based publications that support methodological and analytical competencies in business studies.",
       "The series includes CB-SEM dengan AMOS: Teori dan Aplikasi, which explains the theoretical foundation and practical implementation of covariance-based structural equation modeling; JASP untuk Riset Bisnis, introducing accessible tools for quantitative data analysis; and Metode Penelitian Bisnis (SmartPLS), outlining quantitative research design and analysis using SmartPLS.",
     ],
-    images: ["/book1.png", "/book2.png", "/book3.png"],
+    images: ["/services/research/book1.png", "/services/research/book2.png", "/services/research/book3.png"],
     imgLayout: "three",
     tall: true,
   },
@@ -91,7 +91,7 @@ const events = [
       "The Journal of Business Innovation & Strategy (JBIS), initiated by LeanCore, serves as a publication platform for scholarly and practical works in management.",
       "It emphasizes empirical and statistically grounded studies addressing contemporary business challenges and provides valuable references for professionals, researchers, and organizations seeking evidence-based insights.",
     ],
-    images: ["/journal.png"],
+    images: ["/services/research/journal.png"],
     imgLayout: "three",
   },
 ];

@@ -1542,7 +1542,7 @@ export default function About() {
               Client Testimonials
             </h2>
             <p className="sec-desc" data-animate data-anim="up" data-delay="2">
-              Hear from professionals who transformed their careers and
+              Hear from professionals who transformed their career and
               organizations.
             </p>
             <div
