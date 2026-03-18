@@ -39,9 +39,16 @@ const partnerLogos = [
 
 const boardMembers = [
   {
+    image: "/puty.png",
+    name: "Dr. (cand.) Anak Agung Ayu Puty Andrina, S.M., M.M. CBOA, CPOD",
+    position: "Founder & Director",
+    linkedin: "https://www.linkedin.com/in/putyandrina",
+    expertise: ["Digital Business Transformation", "Supply Chain Management"],
+  },
+  {
     image: "/timotius.png",
     name: "Assoc. Prof. Dr. Timotius Febry, SE., ST., MM., MT., CSCA., CDS",
-    position: "Founder & Director",
+    position: "Founder & Chief of Operations",
     linkedin: "https://www.linkedin.com/in/timotius-febry-cws-3941926b",
     expertise: [
       "Supply Chain Management",
@@ -50,21 +57,6 @@ const boardMembers = [
       "Transportation Management",
       "Business Process Reengineering",
     ],
-  },
-  {
-    image: "/alexander.png",
-    name: "Dr. (cand.) Alexander Hiro Wibisono, S.Si., M.M., COSD",
-    position: "Chief of Marketing & Industrial Relation",
-    linkedin:
-      "https://www.linkedin.com/in/alexander-hiro-wibisono-s-si-m-m-cosd-04b582217",
-    expertise: ["Business Process Reengineering", "Supply Chain Management"],
-  },
-  {
-    image: "/puty.png",
-    name: "Dr. (cand.) Anak Agung Ayu Puty Andrina, S.M., M.M. CBOA, CPOD",
-    position: "Chief of Operations",
-    linkedin: "https://www.linkedin.com/in/putyandrina",
-    expertise: ["Digital Business Transformation", "Supply Chain Management"],
   },
 ];
 
@@ -638,13 +630,16 @@ export default function AboutCompany() {
 
         /* ══════════════════════════════════════════
            ── EXECUTIVE BOARD ──
+           ONLY CHANGE: exec-grid now 2-col centered
         ══════════════════════════════════════════ */
         .exec-section { background: #fff; }
 
         .exec-grid {
           display: grid;
-          grid-template-columns: repeat(3, 1fr);
+          grid-template-columns: repeat(2, 1fr);
           gap: 24px;
+          max-width: 760px;
+          margin: 0 auto;
         }
 
         .exec-card {
@@ -1142,7 +1137,6 @@ export default function AboutCompany() {
         /* ── RESPONSIVE ── */
         @media (max-width: 1024px) {
           .prime-grid { grid-template-columns: repeat(3, 1fr); }
-          .exec-grid { grid-template-columns: repeat(2, 1fr); }
           .team-grid { grid-template-columns: repeat(2, 1fr); }
           .trainers-grid { grid-template-columns: repeat(2, 1fr); }
         }
@@ -1151,7 +1145,7 @@ export default function AboutCompany() {
           .about-us-grid { grid-template-columns: 1fr; }
           .vm-card { grid-template-columns: 1fr; }
           .prime-grid { grid-template-columns: repeat(2, 1fr); }
-          .exec-grid { grid-template-columns: 1fr; }
+          .exec-grid { grid-template-columns: 1fr; max-width: 420px; }
           .team-grid { grid-template-columns: 1fr; }
           .trainers-grid { grid-template-columns: repeat(2, 1fr); }
         }
