@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 const partnerLogos = [
   "/partner/mapnGroup.png",
@@ -205,7 +205,37 @@ const primeValues = [
   },
 ];
 
-// Tag color map
+const stats = [
+  {
+    value: 20,
+    suffix: "+",
+    label: "Improvement & Transformation Projects",
+    icon: "🏭",
+    desc: "Delivered across manufacturing, services, and public sectors",
+  },
+  {
+    value: 200,
+    suffix: "+",
+    label: "Certification Clients Supported",
+    icon: "🎓",
+    desc: "Professionals certified through structured learning programs",
+  },
+  {
+    value: 100,
+    suffix: "+",
+    label: "Research & Strategic Collaborations",
+    icon: "🔬",
+    desc: "Academic-industry initiatives driving practical insights",
+  },
+  {
+    value: 20,
+    suffix: "+",
+    label: "Associate Trainers",
+    icon: "👥",
+    desc: "Highly qualified experts from leading Indonesian industries",
+  },
+];
+
 const expertiseColors: Record<
   string,
   { bg: string; color: string; border: string }
@@ -230,6 +260,11 @@ const expertiseColors: Record<
     color: "#C2410C",
     border: "rgba(234,88,12,0.3)",
   },
+  "Logistics Operations": {
+    bg: "rgba(234,88,12,0.10)",
+    color: "#C2410C",
+    border: "rgba(234,88,12,0.3)",
+  },
   "Stakeholder Advocacy": {
     bg: "rgba(2,132,199,0.10)",
     color: "#0369A1",
@@ -242,8 +277,52 @@ const expertiseColors: Record<
   },
 };
 
+// Animated counter hook
+function useCountUp(target: number, duration = 1800, start = false) {
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    if (!start) return;
+    let startTime: number | null = null;
+    const step = (timestamp: number) => {
+      if (!startTime) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      const ease = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.floor(ease * target));
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }, [start, target, duration]);
+  return count;
+}
+
+function StatCard({
+  stat,
+  index,
+  visible,
+}: {
+  stat: (typeof stats)[0];
+  index: number;
+  visible: boolean;
+}) {
+  const count = useCountUp(stat.value, 1600 + index * 100, visible);
+  return (
+    <div className="stat-card" style={{ animationDelay: `${index * 0.12}s` }}>
+      <div className="stat-icon">{stat.icon}</div>
+      <div className="stat-number">
+        {count}
+        <span className="stat-suffix">{stat.suffix}</span>
+      </div>
+      <div className="stat-label">{stat.label}</div>
+      <div className="stat-desc">{stat.desc}</div>
+    </div>
+  );
+}
+
 export default function AboutCompany() {
   const [showAllTrainers, setShowAllTrainers] = useState(false);
+  const [statsVisible, setStatsVisible] = useState(false);
+  const statsRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     const els = document.querySelectorAll("[data-animate]");
     const observer = new IntersectionObserver(
@@ -259,6 +338,22 @@ export default function AboutCompany() {
     );
     els.forEach((el) => observer.observe(el));
     return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const el = statsRef.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setStatsVisible(true);
+          obs.disconnect();
+        }
+      },
+      { threshold: 0.2 },
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
   }, []);
 
   return (
@@ -297,6 +392,22 @@ export default function AboutCompany() {
         @keyframes fadeIn {
           from { opacity: 0; }
           to   { opacity: 1; }
+        }
+        @keyframes statReveal {
+          from { opacity: 0; transform: translateY(24px) scale(0.96); }
+          to   { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        @keyframes shimmer {
+          0%   { background-position: -200% center; }
+          100% { background-position: 200% center; }
+        }
+        @keyframes quoteFloat {
+          0%, 100% { transform: translateY(0); }
+          50%       { transform: translateY(-6px); }
+        }
+        @keyframes linePulse {
+          0%, 100% { opacity: 0.4; }
+          50%       { opacity: 1; }
         }
 
         [data-animate] {
@@ -458,6 +569,319 @@ export default function AboutCompany() {
           height: 1px;
           background: linear-gradient(to right, #FACC15, #E2E8F0, transparent);
           margin-bottom: 48px;
+        }
+
+        /* ══════════════════════════════════════════
+           ── WELCOME REMARK (NEW) ──
+        ══════════════════════════════════════════ */
+        .welcome-section {
+          background: #ffff;
+          position: relative;
+          overflow: hidden;
+        }
+        .welcome-bg-pattern {
+          position: absolute;
+          inset: 0;
+          background-image:
+            linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+          background-size: 56px 56px;
+          pointer-events: none;
+        }
+        .welcome-bg-glow {
+          position: absolute;
+          top: -120px;
+          right: -120px;
+          width: 500px;
+          height: 500px;
+          background: radial-gradient(circle, rgba(250,204,21,0.08) 0%, transparent 70%);
+          pointer-events: none;
+        }
+        .welcome-wrap {
+          position: relative;
+          z-index: 2;
+          max-width: 1100px;
+          margin: 0 auto;
+          padding: 80px 48px;
+          display: grid;
+          grid-template-columns: 340px 1fr;
+          gap: 64px;
+          align-items: center;
+        }
+
+        /* Photo side */
+        .welcome-photo-col {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 20px;
+        }
+        .welcome-photo-frame {
+          position: relative;
+          width: 300px;
+          height: 300px;
+        }
+        .welcome-photo-border {
+          position: absolute;
+          inset: -8px;
+          border: 1.5px solid rgba(250,204,21,0.35);
+          border-radius: 3px;
+          
+        }
+        .welcome-photo-img {
+          position: relative;
+          z-index: 1;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: top center;
+          border-radius: 2px;
+          display: block;
+          border-top: 3px solid #FACC15;
+        }
+        .welcome-photo-badge {
+          background: #FACC15;
+          color: #003560;
+          font-size: 9px;
+          font-weight: 800;
+          letter-spacing: 0.15em;
+          padding: 6px 16px;
+          border-radius: 2px;
+          text-align: center;
+          text-transform: uppercase;
+        }
+        .welcome-photo-name {
+          color: #004276;
+          font-size: 13px;
+          font-weight: 600;
+          text-align: center;
+          line-height: 1.2;
+        }
+
+        .welcome-photo-title {
+          color: #004276;
+          font-size: 11px;
+          font-weight: 300;
+          text-align: center;
+          line-height: 1.5;
+          max-width: 260px;
+        }
+        .welcome-photo-linkedin {
+          display: inline-flex;
+          align-items: center;
+          gap: 7px;
+          background: rgba(10,102,194,0.9);
+          color: #fff;
+          font-size: 10px;
+          font-weight: 700;
+          letter-spacing: 0.08em;
+          padding: 7px 14px;
+          border-radius: 2px;
+          text-decoration: none;
+          transition: background 0.2s, transform 0.2s;
+        }
+        .welcome-photo-linkedin:hover { background: #004182; transform: translateY(-2px); }
+
+        /* Text side */
+        .welcome-text-col {}
+        .welcome-eyebrow {
+          font-size: 10px;
+          font-weight: 700;
+          letter-spacing: 0.22em;
+          color: #FACC15;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          margin-bottom: 16px;
+        }
+        .welcome-eyebrow::after {
+          content: '';
+          display: block;
+          width: 36px;
+          height: 1px;
+          background: rgba(250,204,21,0.5);
+        }
+        .welcome-title {
+          font-family: 'Roboto',;
+          font-size: clamp(26px, 3vw, 38px);
+          font-weight: 700;
+          color: #004276;
+          line-height: 1.2;
+          margin-bottom: 8px;
+        }
+
+        /* Quote block */
+        .welcome-quote-block {
+          position: relative;
+          margin: 24px 0 28px;
+          padding: 20px 24px 20px 56px;
+          background: rgba(250,204,21,0.07);
+          border-left: 3px solid #FACC15;
+          border-radius: 0 3px 3px 0;
+        }
+        .welcome-quote-mark {
+          position: absolute;
+          left: 14px;
+          top: 14px;
+          font-size: 48px;
+          font-family: Georgia, serif;
+          color: rgba(250,204,21,0.4);
+          line-height: 1;
+          animation: quoteFloat 4s ease-in-out infinite;
+        }
+        .welcome-quote-text {
+          font-size: 14.5px;
+          font-weight: 400;
+          font-style: italic;
+            color: #004276;
+            line-height: 1.8;
+        }
+
+        .welcome-body {
+          display: flex;
+          flex-direction: column;
+          gap: 14px;
+        }
+        .welcome-body p {
+          font-size: 13.5px;
+          font-weight: 300;
+          color: #3c4852;
+          line-height: 1.85;
+        }
+        .welcome-body p strong { color: #004276; font-weight: 600; }
+        .welcome-divider {
+          height: 1px;
+          background: rgba(250,204,21,0.2);
+          margin: 4px 0;
+        }
+        .welcome-sig {
+          margin-top: 8px;
+          display: flex;
+          flex-direction: column;
+          gap: 3px;
+        }
+        .welcome-sig-name {
+          font-size: 14px;
+          font-weight: 700;
+          color: #004276;
+          letter-spacing: 0.02em;
+        }
+        .welcome-sig-role {
+          font-size: 11.5px;
+          font-weight: 300;
+          color: rgba(255,255,255,0.5);
+          line-height: 1.6;
+        }
+
+        /* ══════════════════════════════════════════
+           ── STATS SECTION (NEW - ANIMATED COUNTERS) ──
+        ══════════════════════════════════════════ */
+        .stats-section {
+          background: linear-gradient(135deg, #001E3C 0%, #003562 50%, #001E3C 100%);
+          position: relative;
+          overflow: hidden;
+        }
+        .stats-bg-dots {
+          position: absolute;
+          inset: 0;
+          background-image: radial-gradient(rgba(250,204,21,0.06) 1px, transparent 1px);
+          background-size: 28px 28px;
+          pointer-events: none;
+        }
+        .stats-wrap {
+          position: relative;
+          z-index: 2;
+          max-width: 1100px;
+          margin: 0 auto;
+          padding: 72px 48px;
+        }
+        .stats-header {
+          text-align: center;
+          margin-bottom: 52px;
+        }
+        .stats-eyebrow {
+          font-size: 10px;
+          font-weight: 700;
+          letter-spacing: 0.22em;
+          color: #FACC15;
+          margin-bottom: 12px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 14px;
+        }
+        .stats-eyebrow::before,
+        .stats-eyebrow::after {
+          content: '';
+          display: block;
+          width: 40px;
+          height: 1px;
+          background: rgba(250,204,21,0.4);
+          animation: linePulse 2.5s ease-in-out infinite;
+        }
+        .stats-title {
+          font-family: 'Roboto',;
+          font-size: clamp(24px, 3vw, 36px);
+          font-weight: 700;
+          color: #fff;
+        }
+        .stats-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 20px;
+        }
+        .stat-card {
+          background: rgba(255,255,255,0.04);
+          border: 1px solid rgba(255,255,255,0.08);
+          border-top: 2px solid rgba(250,204,21,0.5);
+          border-radius: 3px;
+          padding: 32px 24px;
+          text-align: center;
+          animation: statReveal 0.7s ease both;
+          transition: background 0.3s, transform 0.3s, border-top-color 0.3s;
+          backdrop-filter: blur(4px);
+        }
+        .stat-card:hover {
+          background: rgba(255,255,255,0.07);
+          transform: translateY(-6px);
+          border-top-color: #FACC15;
+        }
+        .stat-icon {
+          font-size: 28px;
+          margin-bottom: 16px;
+          display: block;
+          filter: grayscale(0.2);
+        }
+        .stat-number {
+          font-family: 'Roboto',;
+          font-size: clamp(36px, 4vw, 56px);
+          font-weight: 800;
+          color: #fff;
+          line-height: 1;
+          margin-bottom: 10px;
+          background: linear-gradient(135deg, #fff 40%, #FACC15 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+        .stat-suffix {
+          color: #FACC15;
+          -webkit-text-fill-color: #FACC15;
+          font-size: 0.7em;
+        }
+        .stat-label {
+          font-size: 12px;
+          font-weight: 700;
+          color: rgba(255,255,255,0.85);
+          letter-spacing: 0.04em;
+          margin-bottom: 8px;
+          line-height: 1.4;
+        }
+        .stat-desc {
+          font-size: 11px;
+          font-weight: 300;
+          color: rgba(255,255,255,0.4);
+          line-height: 1.6;
         }
 
         /* ── ABOUT US ── */
@@ -628,12 +1052,8 @@ export default function AboutCompany() {
           line-height: 1.7;
         }
 
-        /* ══════════════════════════════════════════
-           ── EXECUTIVE BOARD ──
-           ONLY CHANGE: exec-grid now 2-col centered
-        ══════════════════════════════════════════ */
+        /* ── EXECUTIVE BOARD ── */
         .exec-section { background: #fff; }
-
         .exec-grid {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
@@ -641,7 +1061,6 @@ export default function AboutCompany() {
           max-width: 760px;
           margin: 0 auto;
         }
-
         .exec-card {
           position: relative;
           border-radius: 4px;
@@ -656,7 +1075,6 @@ export default function AboutCompany() {
           transform: translateY(-6px);
           box-shadow: 0 24px 60px rgba(0,42,78,0.22);
         }
-
         .exec-photo {
           position: absolute;
           inset: 0;
@@ -668,7 +1086,6 @@ export default function AboutCompany() {
           display: block;
         }
         .exec-card:hover .exec-photo { transform: scale(1.05); }
-
         .exec-gradient {
           position: absolute;
           inset: 0;
@@ -681,7 +1098,6 @@ export default function AboutCompany() {
           );
           transition: opacity 0.4s ease;
         }
-
         .exec-top-bar {
           position: absolute;
           top: 0; left: 0; right: 0;
@@ -689,7 +1105,6 @@ export default function AboutCompany() {
           background: #FACC15;
           z-index: 3;
         }
-
         .exec-linkedin {
           position: absolute;
           top: 14px; right: 14px;
@@ -705,14 +1120,12 @@ export default function AboutCompany() {
           box-shadow: 0 2px 8px rgba(0,0,0,0.3);
         }
         .exec-linkedin:hover { background: #004182; transform: scale(1.12); }
-
         .exec-content {
           position: absolute;
           bottom: 0; left: 0; right: 0;
           z-index: 3;
           padding: 24px 22px 22px;
         }
-
         .exec-position-badge {
           display: inline-block;
           background: #FACC15;
@@ -725,7 +1138,6 @@ export default function AboutCompany() {
           margin-bottom: 10px;
           text-transform: uppercase;
         }
-
         .exec-name {
           font-family: 'Roboto',;
           font-size: 15px;
@@ -734,7 +1146,6 @@ export default function AboutCompany() {
           line-height: 1.35;
           margin-bottom: 14px;
         }
-
         .exec-expertise {
           overflow: hidden;
           max-height: 0;
@@ -761,17 +1172,13 @@ export default function AboutCompany() {
           backdrop-filter: blur(4px);
         }
 
-        /* ══════════════════════════════════════════
-           ── OUR TEAM ──
-        ══════════════════════════════════════════ */
+        /* ── TEAM ── */
         .team-section { background: #F0F4F8; }
-
         .team-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
           gap: 24px;
         }
-
         .team-card {
           position: relative;
           border-radius: 4px;
@@ -786,7 +1193,6 @@ export default function AboutCompany() {
           transform: translateY(-6px);
           box-shadow: 0 20px 52px rgba(0,42,78,0.18);
         }
-
         .team-photo {
           position: absolute;
           inset: 0;
@@ -798,7 +1204,6 @@ export default function AboutCompany() {
           display: block;
         }
         .team-card:hover .team-photo { transform: scale(1.05); }
-
         .team-gradient {
           position: absolute;
           inset: 0;
@@ -810,7 +1215,6 @@ export default function AboutCompany() {
             transparent 100%
           );
         }
-
         .team-top-bar {
           position: absolute;
           top: 0; left: 0; right: 0;
@@ -818,7 +1222,6 @@ export default function AboutCompany() {
           background: #FACC15;
           z-index: 3;
         }
-
         .team-linkedin {
           position: absolute;
           top: 14px; right: 14px;
@@ -834,14 +1237,12 @@ export default function AboutCompany() {
           box-shadow: 0 2px 8px rgba(0,0,0,0.3);
         }
         .team-linkedin:hover { background: #004182; transform: scale(1.12); }
-
         .team-content {
           position: absolute;
           bottom: 0; left: 0; right: 0;
           z-index: 3;
           padding: 22px 20px 20px;
         }
-
         .team-position-badge {
           display: inline-block;
           background: rgba(250,204,21,0.18);
@@ -855,7 +1256,6 @@ export default function AboutCompany() {
           margin-bottom: 8px;
           text-transform: uppercase;
         }
-
         .team-name {
           font-family: 'Roboto',;
           font-size: 14px;
@@ -864,7 +1264,6 @@ export default function AboutCompany() {
           line-height: 1.35;
           margin-bottom: 12px;
         }
-
         .team-expertise {
           overflow: hidden;
           max-height: 0;
@@ -891,17 +1290,13 @@ export default function AboutCompany() {
           backdrop-filter: blur(4px);
         }
 
-        /* ══════════════════════════════════════════
-           ── ASSOCIATE TRAINERS (NEW DESIGN) ──
-        ══════════════════════════════════════════ */
+        /* ── TRAINERS ── */
         .trainers-section { background: #fff; }
-
         .trainers-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
           gap: 20px;
         }
-
         .trainer-card {
           position: relative;
           background: #F8FAFC;
@@ -916,8 +1311,6 @@ export default function AboutCompany() {
           box-shadow: 0 12px 40px rgba(0,66,118,0.12);
           transform: translateY(-4px);
         }
-
-        /* gold + navy gradient top accent */
         .trainer-card::before {
           content: '';
           display: block;
@@ -925,16 +1318,12 @@ export default function AboutCompany() {
           background: linear-gradient(to right, #FACC15, #004276);
           flex-shrink: 0;
         }
-
-        /* avatar + header row */
         .trainer-header {
           display: flex;
           align-items: flex-start;
           gap: 14px;
           padding: 20px 20px 0;
         }
-
-        /* monogram avatar */
         .trainer-avatar {
           flex-shrink: 0;
           width: 52px;
@@ -957,13 +1346,7 @@ export default function AboutCompany() {
           user-select: none;
         }
         .trainer-card:hover .trainer-monogram { color: #004276; }
-
-        /* name + position beside avatar */
-        .trainer-header-text {
-          flex: 1;
-          min-width: 0;
-        }
-
+        .trainer-header-text { flex: 1; min-width: 0; }
         .trainer-name {
           font-size: 13px;
           font-weight: 700;
@@ -971,15 +1354,12 @@ export default function AboutCompany() {
           line-height: 1.45;
           margin-bottom: 4px;
         }
-
         .trainer-position {
           font-size: 11.5px;
           font-weight: 300;
           color: #64748B;
           line-height: 1.5;
         }
-
-        /* body below header */
         .trainer-body {
           padding: 14px 20px 20px;
           display: flex;
@@ -987,12 +1367,7 @@ export default function AboutCompany() {
           flex: 1;
           gap: 10px;
         }
-
-        .trainer-divider {
-          height: 1px;
-          background: #E2E8F0;
-        }
-
+        .trainer-divider { height: 1px; background: #E2E8F0; }
         .trainer-footer {
           display: flex;
           align-items: center;
@@ -1000,7 +1375,6 @@ export default function AboutCompany() {
           gap: 10px;
           flex-wrap: wrap;
         }
-
         .trainer-expertise-label {
           font-size: 9px;
           font-weight: 700;
@@ -1008,14 +1382,12 @@ export default function AboutCompany() {
           color: #94A3B8;
           margin-bottom: 6px;
         }
-
         .trainer-badges {
           display: flex;
           flex-wrap: wrap;
           gap: 6px;
           flex: 1;
         }
-
         .trainer-badge {
           display: inline-flex;
           align-items: center;
@@ -1026,8 +1398,6 @@ export default function AboutCompany() {
           border-radius: 2px;
           border: 1px solid;
         }
-
-        /* LinkedIn link */
         .trainer-linkedin-btn {
           flex-shrink: 0;
           width: 32px;
@@ -1041,12 +1411,7 @@ export default function AboutCompany() {
           transition: background 0.2s, transform 0.2s;
           box-shadow: 0 2px 6px rgba(10,102,194,0.25);
         }
-        .trainer-linkedin-btn:hover {
-          background: #004182;
-          transform: scale(1.1);
-        }
-
-        /* See More button */
+        .trainer-linkedin-btn:hover { background: #004182; transform: scale(1.1); }
         .trainers-see-more {
           margin-top: 32px;
           display: flex;
@@ -1078,14 +1443,8 @@ export default function AboutCompany() {
           transition: transform 0.3s ease;
           display: inline-block;
         }
-        .trainers-see-more-arrow.open {
-          transform: rotate(180deg);
-        }
-
-        /* Hidden trainers fade-in */
-        .trainer-card.trainer-hidden {
-          display: none;
-        }
+        .trainers-see-more-arrow.open { transform: rotate(180deg); }
+        .trainer-card.trainer-hidden { display: none; }
         .trainer-card.trainer-visible-extra {
           animation: fadeUpIn 0.45s ease both;
         }
@@ -1139,6 +1498,8 @@ export default function AboutCompany() {
           .prime-grid { grid-template-columns: repeat(3, 1fr); }
           .team-grid { grid-template-columns: repeat(2, 1fr); }
           .trainers-grid { grid-template-columns: repeat(2, 1fr); }
+          .stats-grid { grid-template-columns: repeat(2, 1fr); }
+          .welcome-wrap { grid-template-columns: 280px 1fr; gap: 40px; }
         }
         @media (max-width: 768px) {
           .sec-wrap { padding: 56px 24px; }
@@ -1148,13 +1509,17 @@ export default function AboutCompany() {
           .exec-grid { grid-template-columns: 1fr; max-width: 420px; }
           .team-grid { grid-template-columns: 1fr; }
           .trainers-grid { grid-template-columns: repeat(2, 1fr); }
+          .stats-grid { grid-template-columns: repeat(2, 1fr); }
+          .welcome-wrap { grid-template-columns: 1fr; gap: 40px; }
+          .welcome-photo-col { order: -1; }
+          .welcome-photo-frame { width: 220px; height: 270px; }
         }
         @media (max-width: 480px) {
           .prime-grid { grid-template-columns: 1fr; }
           .trainers-grid { grid-template-columns: 1fr; }
+          .stats-grid { grid-template-columns: 1fr; }
         }
 
-        /* Touch devices: always show expertise */
         @media (hover: none) {
           .exec-expertise, .team-expertise {
             max-height: 200px;
@@ -1212,6 +1577,164 @@ export default function AboutCompany() {
           />
           <span className="wa-float-label">CHAT VIA WHATSAPP</span>
         </a>
+
+        {/* ══════════════════════════════════════════
+            ── WELCOME REMARK (NEW) ──
+        ══════════════════════════════════════════ */}
+        <section className="welcome-section">
+          <div className="welcome-bg-pattern" />
+          <div className="welcome-bg-glow" />
+          <div className="welcome-wrap">
+            {/* Photo Column */}
+            <div
+              className="welcome-photo-col"
+              data-animate
+              data-anim="left"
+              data-delay="1"
+            >
+              <div className="welcome-photo-frame">
+                <div className="welcome-photo-border" />
+                <img
+                  className="welcome-photo-img"
+                  src="/timotius.png"
+                  alt="Dr. Timotius Febry"
+                />
+              </div>
+              <p className="welcome-photo-name">
+                Assoc. Prof. Dr. Timotius Febry CWS, SE., ST., MM., MT., CSCA.,
+                CDS
+              </p>
+              <p className="welcome-photo-title">
+                Associate Professor for Operation Management
+                <br />
+                Supply Chain & Operational Excellence Specialist
+              </p>
+              <div className="welcome-photo-badge">
+                Founder & Chief of Operations
+              </div>
+              <a
+                href="https://www.linkedin.com/in/timotius-febry-cws-3941926b"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="welcome-photo-linkedin"
+              >
+                <img
+                  src="/linkedin.svg"
+                  alt="LinkedIn"
+                  width={13}
+                  height={13}
+                  style={{ filter: "brightness(0) invert(1)" }}
+                />
+                Connect on LinkedIn
+              </a>
+            </div>
+
+            {/* Text Column */}
+            <div
+              className="welcome-text-col"
+              data-animate
+              data-anim="right"
+              data-delay="2"
+            >
+              <p className="welcome-eyebrow">WELCOME MESSAGE</p>
+              <h2 className="welcome-title">
+                Dear <span>Visitors,</span>
+              </h2>
+              <p
+                style={{
+                  fontSize: "13px",
+                  fontWeight: 300,
+                  color: "#004276",
+                  marginBottom: "4px",
+                }}
+              >
+                Welcome to the website of LeanCore Consulting.
+              </p>
+
+              <div className="welcome-quote-block">
+                <span className="welcome-quote-mark">"</span>
+                <p className="welcome-quote-text">
+                  Sustainable improvement starts with mindset and is
+                  strengthened through continuous learning and disciplined
+                  execution.
+                </p>
+              </div>
+
+              <div className="welcome-body">
+                <p>
+                  This platform is designed to provide insights, solutions, and
+                  professional services in the areas of{" "}
+                  <strong>
+                    Operational Excellence, Lean Transformation, Supply Chain
+                    Management,
+                  </strong>{" "}
+                  and <strong>Business Process Improvement.</strong>
+                </p>
+                <p>
+                  LeanCore Consulting was established with a strong commitment
+                  to help organizations achieve{" "}
+                  <strong>sustainable performance</strong> through structured
+                  improvement approaches — focusing not only on tools and
+                  methodologies, but on building the right mindset, capability,
+                  and culture within organizations.
+                </p>
+                <p>
+                  Led by practitioners and academics, we bring a unique
+                  combination of <strong>practical industry experience</strong>{" "}
+                  and scientific approach — spanning manufacturing, services,
+                  and public sectors.
+                </p>
+                <p>
+                  We hope this platform provides valuable insights for your
+                  organization. For inquiries or collaboration opportunities,
+                  please feel free to reach out.
+                </p>
+
+                <div className="welcome-divider" />
+                <div className="welcome-sig">
+                  <p className="welcome-sig-name">
+                    Dr. Timotius Febry CWS, SE., ST., MM., MT., CSCA., CDS
+                  </p>
+                  <p className="welcome-sig-role">
+                    Associate Professor for Operation Management
+                    <br />
+                    Supply Chain & Operational Excellence Specialist
+                    <br />
+                    Director, LeanCore Consulting
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ══════════════════════════════════════════
+            ── STATS / ACHIEVEMENTS (NEW - ANIMATED) ──
+        ══════════════════════════════════════════ */}
+        <section className="stats-section">
+          <div className="stats-bg-dots" />
+          <div className="stats-wrap" ref={statsRef}>
+            <div
+              className="stats-header"
+              data-animate
+              data-anim="up"
+              data-delay="0"
+            >
+              <p className="stats-eyebrow">BY THE NUMBERS</p>
+              <h2 className="stats-title">Impact That Speaks for Itself</h2>
+            </div>
+            <div className="stats-grid">
+              {stats.map((stat, i) => (
+                <StatCard
+                  key={i}
+                  stat={stat}
+                  index={i}
+                  visible={statsVisible}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
 
         {/* ── ABOUT US ── */}
         <section style={{ background: "#fff" }}>
@@ -1642,7 +2165,6 @@ export default function AboutCompany() {
                     data-anim="up"
                     data-delay={String((i % 3) + 1)}
                   >
-                    {/* Header: avatar + name/position */}
                     <div className="trainer-header">
                       <div className="trainer-avatar">
                         <span className="trainer-monogram">{initials}</span>
@@ -1652,8 +2174,6 @@ export default function AboutCompany() {
                         <p className="trainer-position">{t.position}</p>
                       </div>
                     </div>
-
-                    {/* Body: expertise + LinkedIn */}
                     <div className="trainer-body">
                       <div className="trainer-divider" />
                       <p className="trainer-expertise-label">EXPERTISE</p>
@@ -1702,7 +2222,6 @@ export default function AboutCompany() {
               })}
             </div>
 
-            {/* See More / See Less */}
             {trainers.length > 6 && (
               <div className="trainers-see-more">
                 <button
