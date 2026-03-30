@@ -639,7 +639,7 @@ export default function Contact() {
                     Saturday
                     <span className="hours-badge">HALF DAY</span>
                   </span>
-                  <span className="hours-time">09:00 – 12:00</span>
+                  <span className="hours-time">09:00 – 13:00</span>
                 </div>
                 <div className="hours-row">
                   <span className="hours-day">Sunday</span>
