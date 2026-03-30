@@ -54,7 +54,8 @@ const insights = [
   {
     image: "/insight/insight8.png",
     tag: "SRM",
-    title: "Supplier Relationship Management: Dari Transaksi ke Strategic Partnership",
+    title:
+      "Supplier Relationship Management: Dari Transaksi ke Strategic Partnership",
     caption:
       "Banyak organisasi masih melihat supplier sebagai cost center.\n\nPadahal, dengan pendekatan SRM yang matang, supplier dapat menjadi:\n- Mitra jangka panjang berbasis kepercayaan\n- Pihak yang berbagi risiko & insentif secara selaras\n- Co-creator dalam inovasi dan peningkatan kinerja\n\nManfaat nyata dari SRM yang terstruktur:\n✔ Risiko pasokan menurun\n✔ Konflik kontraktual berkurang\n✔ Peningkatan inovasi & improvement\n✔ Respons pasar lebih cepat\n\nPertanyaannya: apakah hubungan supplier Anda masih transaksional, atau sudah strategis?\n\n#SupplierRelationshipManagement #SupplyChainStrategy #ProcurementExcellence #BusinessTransformation #LeanManagement #Leadership",
   },
@@ -71,6 +72,22 @@ const insights = [
     title: "Stok Optimal Bukan yang Terbanyak — Tapi yang Paling Tepat",
     caption:
       "Banyak perusahaan masih melihat stok bahan baku hanya sebagai persediaan yang harus selalu tersedia di gudang.\n\nPadahal dalam praktik operasi modern, inventory adalah instrumen strategis yang memengaruhi efisiensi biaya sekaligus kelancaran produksi.\n\nDalam praktiknya, perusahaan sering terjebak pada dua kondisi ekstrem.\n\nOverstock menyebabkan biaya penyimpanan meningkat, cash flow tertekan, dan risiko barang menjadi obsolete. Sebaliknya, understock dapat mengganggu produksi, memperpanjang lead time, bahkan menyebabkan kehilangan peluang pasar.\n\nKarena itu, pengelolaan stok tidak cukup hanya dengan menambah atau mengurangi persediaan. Yang lebih penting adalah mengoptimalkan stok melalui:\n- Perencanaan berbasis data permintaan\n- Perhitungan safety stock yang tepat\n- Kolaborasi yang baik dengan pemasok\n\nPada akhirnya, tujuan utama manajemen inventory adalah menemukan keseimbangan antara efisiensi biaya dan kontinuitas operasi.\n\nDalam supply chain modern, stok yang optimal bukan yang paling banyak — tetapi yang paling tepat.\n\n#SupplyChainManagement #InventoryManagement #OperationsManagement #SupplyChain #Manufacturing",
+  },
+  {
+    image: "/insight/insight11.png",
+    tag: "Supply Chain",
+    title:
+      "Distribution Network Bukan Sekadar Kirim Barang — Ini Soal Strategi Memenangkan Pasar",
+    caption:
+      "Banyak perusahaan berpikir distribusi = transportasi.\n\nPadahal, di era kompetisi cepat seperti sekarang, distribution network adalah keunggulan kompetitif.\n\nSaya sering menemukan masalah yang sama:\n- Gudang terlalu banyak → biaya tinggi\n- Gudang terlalu sedikit → service level turun\n- Rute tidak optimal → lead time lama\n- Data tidak real-time → keputusan selalu terlambat\n\nLalu bagaimana cara optimasinya?\n\n1. Re-design Network, bukan sekadar perbaiki operasional\nTentukan ulang lokasi warehouse berdasarkan demand, bukan kebiasaan lama.\n\n2. Data-driven decision\nGunakan data demand, lead time, dan cost untuk menentukan skenario terbaik — bukan feeling.\n\n3. Segmentasi distribusi\nTidak semua produk harus diperlakukan sama. Fast moving ≠ slow moving.\n\n4. Optimasi rute & transportasi\nLast mile sering jadi biaya terbesar — dan paling sering diabaikan.\n\n5. Integrasi digital (Supply Chain 5.0)\nReal-time visibility = faster decision = higher service level.\n\nFaktanya: perusahaan yang mengoptimalkan distribution network bisa menurunkan cost hingga 10–30% dan meningkatkan service level secara signifikan.\n\nPada akhirnya, pertanyaannya bukan:\nBagaimana kita mengirim barang?\n\nTapi:\nBagaimana kita mendesain sistem distribusi yang memenangkan kompetisi?\n\nJika Anda sedang mengoptimalkan supply chain atau ingin redesign distribution network, kami terbuka untuk diskusi.\n\n#SupplyChain #Logistics #Distribution #OperationalExcellence #LeanManagement",
+  },
+  {
+    image: "/insight/insight12.png",
+    tag: "Supply Chain",
+    title:
+      "Master Production Schedule: Fondasi Perencanaan yang Sering Diabaikan",
+    caption:
+      'Dalam dunia supply chain, banyak perusahaan masih fokus pada eksekusi… tapi lupa satu hal penting: perencanaan.\n\nSalah satu fondasi utama dalam perencanaan produksi adalah Master Production Schedule (MPS).\n\nMPS bukan sekadar jadwal produksi. Ini adalah "otak" yang menentukan:\n- Apa yang harus diproduksi\n- Berapa jumlahnya\n- Kapan harus diproduksi\n\nDengan MPS yang baik, perusahaan bisa:\n- Menyelaraskan demand dan supply\n- Menghindari overstock & stockout\n- Mengoptimalkan kapasitas produksi\n- Memberikan visibilitas ke tim (production, purchasing, sales)\n- Menjaga ketepatan delivery ke customer\n\nLebih dari itu, MPS juga menjadi fondasi bagi sistem seperti Material Requirements Planning (MRP) dalam menentukan kebutuhan material secara akurat.\n\nDi era Supply Chain modern — bahkan menuju 5.0 — perusahaan tidak hanya butuh cepat… tapi juga terencana dan terintegrasi.\n\nKarena tanpa planning yang kuat, eksekusi sehebat apapun tetap akan berantakan.\n\nBagaimana dengan di perusahaan Anda? Apakah MPS sudah menjadi bagian dari strategi, atau masih sekadar formalitas?\n\n#LCCinsight #LeanManagement #SupplyChain #MasterProductionSchedule',
   },
 ];
 

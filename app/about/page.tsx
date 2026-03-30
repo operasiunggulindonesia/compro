@@ -48,7 +48,7 @@ const boardMembers = [
   {
     image: "/timotius.png",
     name: "Assoc. Prof. Dr. Timotius Febry, SE., ST., MM., MT., CSCA., CDS",
-    position: "Founder & Chief of Operations",
+    position: "Chief of Operations",
     linkedin: "https://www.linkedin.com/in/timotius-febry-cws-3941926b",
     expertise: [
       "Supply Chain Management",
@@ -1610,7 +1610,7 @@ export default function AboutCompany() {
                 Supply Chain & Operational Excellence Specialist
               </p>
               <div className="welcome-photo-badge">
-                Founder & Chief of Operations
+                Chief of Operations
               </div>
               <a
                 href="https://www.linkedin.com/in/timotius-febry-cws-3941926b"

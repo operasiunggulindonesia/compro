@@ -824,7 +824,14 @@ export default function BusinessAdvisor() {
             </motion.div>
 
             <div className="projects-images">
-              {["/services/bmc/bmc.png", "/services/bmc/bmc1.png", "/services/bmc/bmc2.png", "/services/bmc/bmc3.jpeg", "/services/bmc/bmc4.jpeg", "/services/bmc/bmc5.jpeg"].map((src, i) => (
+              {[
+                "/services/bmc/bmc.jpeg",
+                "/services/bmc/bmc1.jpeg",
+                "/services/bmc/bmc2.jpeg",
+                "/services/bmc/bmc3.jpeg",
+                "/services/bmc/bmc4.jpeg",
+                "/services/bmc/bmc6.jpeg",
+              ].map((src, i) => (
                 <div key={i} className="projects-img-wrap">
                   <Image
                     src={src}
