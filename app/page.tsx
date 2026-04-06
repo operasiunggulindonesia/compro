@@ -78,22 +78,6 @@ const testimonials = [
 
 const events = [
   {
-    date: "13-14",
-    month: "MAR",
-    title: "CIPM - Certified Integrated Production Manager",
-    batch: "BATCH 1",
-    type: "CERTIFICATION PROGRAM",
-    link: "https://www.instagram.com/p/DRV06VgD7E1/",
-  },
-  {
-    date: "28",
-    month: "MAR",
-    title:
-      "Predictive Business: Teknik Analisis Data untuk Proyeksi Bisnis 2026",
-    type: "WEBINAR",
-    link: "https://www.instagram.com/leancore_consultant/",
-  },
-  {
     date: "10-12",
     month: "APR",
     title: "CFDM - Certified Factory & Digital Manufacturing",
@@ -102,7 +86,7 @@ const events = [
     link: "https://www.instagram.com/p/DRVumqEEq7y/",
   },
   {
-    date: "25",
+    date: "30",
     month: "APR",
     title: "Smart Factory 4.0: Integrating IoT & Data-Driven Strategy",
     type: "PUBLIC TRAINING",
@@ -124,7 +108,7 @@ const events = [
     link: "https://www.instagram.com/leancore_consultant/",
   },
   {
-    date: "27",
+    date: "26",
     month: "JUN",
     title: "Global Supply Chain Resilience: Navigating Risk & Uncertainty",
     type: "PUBLIC TRAINING",
@@ -185,7 +169,7 @@ const events = [
     link: "https://www.instagram.com/leancore_consultant/",
   },
   {
-    date: "10",
+    date: "9",
     month: "OCT",
     title: "Strategic Business Reengineering: Designing Future-Ready Growth",
     type: "PUBLIC TRAINING",
@@ -216,7 +200,7 @@ const events = [
     link: "https://www.instagram.com/leancore_consultant/",
   },
   {
-    date: "12",
+    date: "11",
     month: "DEC",
     title: "The Future Leader: Lean Leadership & Organizational Agility",
     type: "PUBLIC TRAINING",
@@ -267,7 +251,7 @@ const services = [
     image: "/research-publications.png",
     slug: "researchPublication",
   },
-  { title: "Data Solution", image: "/data-solution.jpg", slug: "dataSolution" },
+  // { title: "Data Solution", image: "/data-solution.jpg", slug: "dataSolution" },
 ];
 
 export default function About() {
@@ -570,17 +554,20 @@ export default function About() {
 
         /* ── SERVICES GRID ── */
         .services-grid {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
+          display: flex;
+          flex-wrap: wrap;
           gap: 16px;
+          justify-content: center;
         }
         .service-card {
           position: relative;
+          width: calc(33.333% - 11px);
           height: 240px;
           overflow: hidden;
           border-top: 3px solid transparent;
           transition: border-color 0.3s;
           cursor: pointer;
+          flex-shrink: 0;
         }
         .service-card:hover { border-top-color: #FACC15; }
         .service-card-overlay {
@@ -1171,7 +1158,7 @@ export default function About() {
 
         /* ── RESPONSIVE ── */
         @media (max-width: 1024px) {
-          .services-grid { grid-template-columns: repeat(2, 1fr); }
+          .service-card { width: calc(50% - 8px); }
           .programs-grid { grid-template-columns: 1fr; }
         }
 
@@ -1186,7 +1173,7 @@ export default function About() {
 
         @media (max-width: 640px) {
           .sec-wrap { padding: 56px 24px; }
-          .services-grid { grid-template-columns: 1fr; }
+          .service-card { width: 100%; }
         }
       `}</style>
 
@@ -1312,9 +1299,7 @@ export default function About() {
               <div className="reach-body">
                 {/* Kolom Kiri */}
                 <div className="reach-inner">
-                  <div className="reach-perks-header">
-                    
-                  </div>
+                  <div className="reach-perks-header"></div>
 
                   <ul className="reach-perks-list">
                     <li>

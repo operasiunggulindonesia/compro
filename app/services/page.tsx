@@ -77,20 +77,20 @@ const services = [
       "Journal of Business Innovation & Strategy",
     ],
   },
-  {
-    number: "06",
-    title: "Data Solution",
-    slug: "dataSolution",
-    icon: "/data.svg",
-    description:
-      "Data Solution provides research and analytics services grounded in scientific methodology to support organizations in generating reliable, data-driven insights for strategic decision-making and sustainable business growth.",
-    features: [
-      "Data Analytics & Visualization",
-      "Business Intelligence Solutions",
-      "Predictive Modeling & Forecasting",
-      "Data Governance & Security",
-    ],
-  },
+  // {
+  //   number: "06",
+  //   title: "Data Solution",
+  //   slug: "dataSolution",
+  //   icon: "/data.svg",
+  //   description:
+  //     "Data Solution provides research and analytics services grounded in scientific methodology to support organizations in generating reliable, data-driven insights for strategic decision-making and sustainable business growth.",
+  //   features: [
+  //     "Data Analytics & Visualization",
+  //     "Business Intelligence Solutions",
+  //     "Predictive Modeling & Forecasting",
+  //     "Data Governance & Security",
+  //   ],
+  // },
 ];
 
 export default function Services() {
