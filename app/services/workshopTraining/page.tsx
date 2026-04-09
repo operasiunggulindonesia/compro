@@ -79,6 +79,13 @@ const projects = [
   "Mini MBA Leadership Development Program – PMP ICE & FROST",
 ];
 
+const workshopPhotos = [
+  { src: "/services/workshop/workshop.jpeg" },
+  { src: "/services/workshop/workshop1.png" },
+  { src: "/services/workshop/workshop2.jpeg" },
+  { src: "/services/workshop/workshop3.jpeg" },
+];
+
 export default function WorkshopTraining() {
   return (
     <>
@@ -436,34 +443,115 @@ export default function WorkshopTraining() {
 
         .project-card:hover .project-arrow { color: #FACC15; }
 
-        /* Photo showcase */
+        /* ── PHOTO SHOWCASE ── */
         .photo-showcase {
           background: #fff;
           border: 1px solid #E2E8F0;
           border-top: 3px solid #FACC15;
-          padding: 36px;
+          padding: 40px;
         }
 
-        .photo-showcase-grid {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 24px;
-          align-items: center;
-        }
-
-        .showcase-img-wrap {
-          background: #F8FAFC;
-          border: 1px solid #E2E8F0;
-          padding: 16px;
+        .photo-showcase-header {
           display: flex;
           align-items: center;
-          justify-content: center;
-          transition: box-shadow 0.25s, transform 0.25s;
+          gap: 12px;
+          margin-bottom: 28px;
         }
 
-        .showcase-img-wrap:hover {
-          box-shadow: 0 8px 32px rgba(0,66,118,0.1);
-          transform: translateY(-3px);
+        .photo-showcase-label {
+          font-size: 10px;
+          font-weight: 700;
+          letter-spacing: 0.18em;
+          color: #004276;
+        }
+
+        .photo-showcase-line {
+          flex: 1;
+          height: 1px;
+          background: linear-gradient(to right, #E2E8F0, transparent);
+        }
+
+        .photo-showcase-count {
+          font-size: 10px;
+          font-weight: 600;
+          color: #FACC15;
+          letter-spacing: 0.1em;
+        }
+
+        .photo-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: repeat(2, 260px);
+          gap: 12px;
+        }
+
+        .photo-item {
+          position: relative;
+          overflow: hidden;
+          background: #F1F5F9;
+          border: 1px solid #E2E8F0;
+          cursor: pointer;
+        }
+
+        .photo-item::after {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(
+            to top,
+            rgba(0, 42, 78, 0.45) 0%,
+            transparent 55%
+          );
+          opacity: 0;
+          transition: opacity 0.3s ease;
+        }
+
+        .photo-item:hover::after {
+          opacity: 1;
+        }
+
+        .photo-item img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.45s ease;
+          display: block;
+        }
+
+        .photo-item:hover img {
+          transform: scale(1.05);
+        }
+
+        .photo-item-overlay {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          padding: 16px 18px;
+          z-index: 2;
+          transform: translateY(8px);
+          opacity: 0;
+          transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .photo-item:hover .photo-item-overlay {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        .photo-item-label {
+          font-size: 11px;
+          font-weight: 600;
+          color: #fff;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+        }
+
+        .photo-item-num {
+          font-size: 10px;
+          font-weight: 400;
+          color: #FACC15;
+          margin-top: 2px;
         }
 
         /* ── CTA ── */
@@ -584,7 +672,11 @@ export default function WorkshopTraining() {
           .wt-back-link { left: 24px; }
           .sec-wrap { padding: 56px 24px; }
           .projects-grid { grid-template-columns: 1fr; }
-          .photo-showcase-grid { grid-template-columns: 1fr; }
+          .photo-grid {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(4, 220px);
+          }
+          .photo-showcase { padding: 24px; }
           .cta-section { padding: 0 24px 56px; }
           .cta-inner { padding: 48px 28px; }
           .why-grid { grid-template-columns: 1fr 1fr; }
@@ -764,46 +856,33 @@ export default function WorkshopTraining() {
               ))}
             </motion.div>
 
-            {/* Photo Showcase */}
+            {/* ── PHOTO SHOWCASE ── */}
             <div className="photo-showcase">
-              <div className="photo-showcase-grid">
-                <div className="showcase-img-wrap">
-                  <Image
-                    src="/services/workshop/workshop.png"
-                    alt="Workshop"
-                    width={480}
-                    height={340}
-                    className="object-contain"
-                  />
-                </div>
-                <div className="showcase-img-wrap">
-                  <Image
-                    src="/services/workshop/workshop1.png"
-                    alt="Workshop"
-                    width={480}
-                    height={340}
-                    className="object-contain"
-                  />
-                </div>
-                <div className="showcase-img-wrap">
-                  <Image
-                    src="/services/workshop/workshop2.png"
-                    alt="Workshop"
-                    width={480}
-                    height={340}
-                    className="object-contain"
-                  />
-                </div>
-                <div className="showcase-img-wrap">
-                  <Image
-                    src="/services/workshop/workshop3.jpeg"
-                    alt="Workshop"
-                    width={480}
-                    height={340}
-                    className="object-contain"
-                  />
-                </div>
+              <div className="photo-showcase-header">
+                <span className="photo-showcase-label">DOCUMENTATION</span>
+                <span className="photo-showcase-line" />
               </div>
+
+              <motion.div
+                className="photo-grid"
+                variants={stagger}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+              >
+                {workshopPhotos.map((photo, i) => (
+                  <motion.div key={i} className="photo-item" variants={fadeUp}>
+                    <Image
+                      src={photo.src}
+                      alt={`Workshop photo ${i + 1}`}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                    <div className="photo-item-overlay"></div>
+                  </motion.div>
+                ))}
+              </motion.div>
             </div>
           </div>
         </section>

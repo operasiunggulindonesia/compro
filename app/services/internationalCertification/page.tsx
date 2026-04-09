@@ -1165,9 +1165,9 @@ export default function InternationalCertification() {
             </div>
 
             <div className="prev-images">
-              {/* <div className="prev-img-wrap">
+              <div className="prev-img-wrap">
                 <Image
-                  src="/services/certif/certif.png"
+                  src="/services/certif/certif.jpeg"
                   alt="LeanCore Certification"
                   width={500}
                   height={350}
@@ -1177,14 +1177,14 @@ export default function InternationalCertification() {
               </div>
               <div className="prev-img-wrap">
                 <Image
-                  src="/services/certif/certif1.png"
+                  src="/services/certif/certif1.jpeg"
                   alt="AAFM Certification Example"
                   width={500}
                   height={350}
                   className="object-contain"
                   style={{ maxHeight: 300 }}
                 />
-              </div> */}
+              </div>
               <div className="prev-img-wrap">
                 <Image
                   src="/services/certif/certif2.jpeg"
