@@ -37,18 +37,16 @@ const partnerLogos = [
   "/partner/petroKimia.png",
 ];
 
-const boardMembers = [
+const allMembers = [
   {
     image: "/puty.png",
     name: "Dr. (cand.) Anak Agung Ayu Puty Andrina, S.M., M.M. CBOA, CPOD",
-    position: "Founder & Director",
     linkedin: "https://www.linkedin.com/in/putyandrina",
     expertise: ["Digital Business Transformation", "Supply Chain Management"],
   },
   {
     image: "/timotius.png",
     name: "Assoc. Prof. Dr. Timotius Febry, SE., ST., MM., MT., CSCA., CDS",
-    position: "Chief of Operations",
     linkedin: "https://www.linkedin.com/in/timotius-febry-cws-3941926b",
     expertise: [
       "Supply Chain Management",
@@ -58,13 +56,9 @@ const boardMembers = [
       "Business Process Reengineering",
     ],
   },
-];
-
-const teamMembers = [
   {
     image: "/merita.png",
     name: "Merita Rahma Anastasya, S.M.",
-    position: "Account Executive",
     linkedin: "https://www.linkedin.com/in/merita-anastasya/",
     expertise: [
       "Client Relationship Management",
@@ -74,7 +68,6 @@ const teamMembers = [
   {
     image: "/insyuzuu.png",
     name: "Insyuzuu Cahyani Aisyah, S.Kom.",
-    position: "Product Engineer",
     linkedin: "https://www.linkedin.com/in/insyuzuu-cahyani-aisyah",
     expertise: [
       "Design & Develop reliable and scalable software aligned with business goals",
@@ -83,7 +76,6 @@ const teamMembers = [
   {
     image: "/vero.png",
     name: "Veronika Juliana Purwandanu, S.M.",
-    position: "Account Executive",
     linkedin: "https://www.linkedin.com/in/veronikajuliana/?locale=en_US",
     expertise: [
       "Client Relationship Management",
@@ -571,9 +563,7 @@ export default function AboutCompany() {
           margin-bottom: 48px;
         }
 
-        /* ══════════════════════════════════════════
-           ── WELCOME REMARK (NEW) ──
-        ══════════════════════════════════════════ */
+        /* ── WELCOME ── */
         .welcome-section {
           background: #ffff;
           position: relative;
@@ -608,8 +598,6 @@ export default function AboutCompany() {
           gap: 64px;
           align-items: center;
         }
-
-        /* Photo side */
         .welcome-photo-col {
           display: flex;
           flex-direction: column;
@@ -626,7 +614,6 @@ export default function AboutCompany() {
           inset: -8px;
           border: 1.5px solid rgba(250,204,21,0.35);
           border-radius: 3px;
-          
         }
         .welcome-photo-img {
           position: relative;
@@ -657,7 +644,6 @@ export default function AboutCompany() {
           text-align: center;
           line-height: 1.2;
         }
-
         .welcome-photo-title {
           color: #004276;
           font-size: 11px;
@@ -681,8 +667,6 @@ export default function AboutCompany() {
           transition: background 0.2s, transform 0.2s;
         }
         .welcome-photo-linkedin:hover { background: #004182; transform: translateY(-2px); }
-
-        /* Text side */
         .welcome-text-col {}
         .welcome-eyebrow {
           font-size: 10px;
@@ -709,8 +693,6 @@ export default function AboutCompany() {
           line-height: 1.2;
           margin-bottom: 8px;
         }
-
-        /* Quote block */
         .welcome-quote-block {
           position: relative;
           margin: 24px 0 28px;
@@ -733,10 +715,9 @@ export default function AboutCompany() {
           font-size: 14.5px;
           font-weight: 400;
           font-style: italic;
-            color: #004276;
-            line-height: 1.8;
+          color: #004276;
+          line-height: 1.8;
         }
-
         .welcome-body {
           display: flex;
           flex-direction: column;
@@ -773,9 +754,7 @@ export default function AboutCompany() {
           line-height: 1.6;
         }
 
-        /* ══════════════════════════════════════════
-           ── STATS SECTION (NEW - ANIMATED COUNTERS) ──
-        ══════════════════════════════════════════ */
+        /* ── STATS ── */
         .stats-section {
           background: linear-gradient(135deg, #001E3C 0%, #003562 50%, #001E3C 100%);
           position: relative;
@@ -1052,133 +1031,21 @@ export default function AboutCompany() {
           line-height: 1.7;
         }
 
-        /* ── EXECUTIVE BOARD ── */
-        .exec-section { background: #fff; }
-        .exec-grid {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 24px;
-          max-width: 760px;
-          margin: 0 auto;
-        }
-        .exec-card {
-          position: relative;
-          border-radius: 4px;
-          overflow: hidden;
-          cursor: pointer;
-          aspect-ratio: 3 / 4;
-          box-shadow: 0 8px 32px rgba(0,42,78,0.14);
-          transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                      box-shadow 0.4s ease;
-        }
-        .exec-card:hover {
-          transform: translateY(-6px);
-          box-shadow: 0 24px 60px rgba(0,42,78,0.22);
-        }
-        .exec-photo {
-          position: absolute;
-          inset: 0;
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          object-position: top center;
-          transition: transform 0.6s ease;
-          display: block;
-        }
-        .exec-card:hover .exec-photo { transform: scale(1.05); }
-        .exec-gradient {
-          position: absolute;
-          inset: 0;
-          background: linear-gradient(
-            to top,
-            rgba(0, 22, 45, 0.97) 0%,
-            rgba(0, 42, 78, 0.75) 40%,
-            rgba(0, 42, 78, 0.10) 70%,
-            transparent 100%
-          );
-          transition: opacity 0.4s ease;
-        }
-        .exec-top-bar {
-          position: absolute;
-          top: 0; left: 0; right: 0;
-          height: 3px;
-          background: #FACC15;
-          z-index: 3;
-        }
-        .exec-linkedin {
-          position: absolute;
-          top: 14px; right: 14px;
-          z-index: 4;
-          width: 34px; height: 34px;
-          background: #0A66C2;
-          border-radius: 3px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          text-decoration: none;
-          transition: background 0.2s, transform 0.25s;
-          box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-        }
-        .exec-linkedin:hover { background: #004182; transform: scale(1.12); }
-        .exec-content {
-          position: absolute;
-          bottom: 0; left: 0; right: 0;
-          z-index: 3;
-          padding: 24px 22px 22px;
-        }
-        .exec-position-badge {
-          display: inline-block;
-          background: #FACC15;
-          color: #003560;
-          font-size: 9px;
-          font-weight: 800;
-          letter-spacing: 0.14em;
-          padding: 4px 10px;
-          border-radius: 2px;
-          margin-bottom: 10px;
-          text-transform: uppercase;
-        }
-        .exec-name {
-          font-family: 'Roboto',;
-          font-size: 15px;
-          font-weight: 700;
-          color: #fff;
-          line-height: 1.35;
-          margin-bottom: 14px;
-        }
-        .exec-expertise {
-          overflow: hidden;
-          max-height: 0;
-          opacity: 0;
-          transition: max-height 0.4s ease, opacity 0.35s ease;
-        }
-        .exec-card:hover .exec-expertise { max-height: 200px; opacity: 1; }
-        .exec-expertise-label {
-          font-size: 8px;
-          font-weight: 700;
-          letter-spacing: 0.2em;
-          color: rgba(255,255,255,0.45);
-          margin-bottom: 8px;
-        }
-        .exec-expertise-pills { display: flex; flex-wrap: wrap; gap: 5px; }
-        .exec-pill {
-          background: rgba(255,255,255,0.10);
-          border: 1px solid rgba(250,204,21,0.35);
-          color: rgba(255,255,255,0.85);
-          font-size: 10px;
-          font-weight: 400;
-          padding: 3px 9px;
-          border-radius: 2px;
-          backdrop-filter: blur(4px);
-        }
-
-        /* ── TEAM ── */
+        /* ── UNIFIED TEAM ── */
         .team-section { background: #F0F4F8; }
+
         .team-grid {
           display: grid;
-          grid-template-columns: repeat(3, 1fr);
+          grid-template-columns: repeat(6, 1fr);
           gap: 24px;
         }
+        .team-grid .team-card:nth-child(1) { grid-column: span 2; }
+        .team-grid .team-card:nth-child(2) { grid-column: span 2; }
+        .team-grid .team-card:nth-child(3) { grid-column: span 2; }
+        .team-grid .team-card:nth-child(4) { grid-column: 2 / span 2; }
+        .team-grid .team-card:nth-child(5) { grid-column: 4 / span 2; }
+
+        /* Shared card styles */
         .team-card {
           position: relative;
           border-radius: 4px;
@@ -1243,19 +1110,6 @@ export default function AboutCompany() {
           z-index: 3;
           padding: 22px 20px 20px;
         }
-        .team-position-badge {
-          display: inline-block;
-          background: rgba(250,204,21,0.18);
-          border: 1px solid rgba(250,204,21,0.5);
-          color: #FACC15;
-          font-size: 9px;
-          font-weight: 700;
-          letter-spacing: 0.13em;
-          padding: 3px 9px;
-          border-radius: 2px;
-          margin-bottom: 8px;
-          text-transform: uppercase;
-        }
         .team-name {
           font-family: 'Roboto',;
           font-size: 14px;
@@ -1270,7 +1124,7 @@ export default function AboutCompany() {
           opacity: 0;
           transition: max-height 0.4s ease, opacity 0.35s ease;
         }
-        .team-card:hover .team-expertise { max-height: 180px; opacity: 1; }
+        .team-card:hover .team-expertise { max-height: 200px; opacity: 1; }
         .team-expertise-label {
           font-size: 8px;
           font-weight: 700;
@@ -1497,6 +1351,7 @@ export default function AboutCompany() {
         @media (max-width: 1024px) {
           .prime-grid { grid-template-columns: repeat(3, 1fr); }
           .team-grid { grid-template-columns: repeat(2, 1fr); }
+          .team-grid .team-card:nth-child(n) { grid-column: span 1; }
           .trainers-grid { grid-template-columns: repeat(2, 1fr); }
           .stats-grid { grid-template-columns: repeat(2, 1fr); }
           .welcome-wrap { grid-template-columns: 280px 1fr; gap: 40px; }
@@ -1506,8 +1361,8 @@ export default function AboutCompany() {
           .about-us-grid { grid-template-columns: 1fr; }
           .vm-card { grid-template-columns: 1fr; }
           .prime-grid { grid-template-columns: repeat(2, 1fr); }
-          .exec-grid { grid-template-columns: 1fr; max-width: 420px; }
-          .team-grid { grid-template-columns: 1fr; }
+          .team-grid { grid-template-columns: repeat(2, 1fr); }
+          .team-grid .team-card:nth-child(n) { grid-column: span 1; }
           .trainers-grid { grid-template-columns: repeat(2, 1fr); }
           .stats-grid { grid-template-columns: repeat(2, 1fr); }
           .welcome-wrap { grid-template-columns: 1fr; gap: 40px; }
@@ -1521,7 +1376,7 @@ export default function AboutCompany() {
         }
 
         @media (hover: none) {
-          .exec-expertise, .team-expertise {
+          .team-expertise {
             max-height: 200px;
             opacity: 1;
           }
@@ -1578,14 +1433,11 @@ export default function AboutCompany() {
           <span className="wa-float-label">CHAT VIA WHATSAPP</span>
         </a>
 
-        {/* ══════════════════════════════════════════
-            ── WELCOME REMARK (NEW) ──
-        ══════════════════════════════════════════ */}
+        {/* ── WELCOME REMARK ── */}
         <section className="welcome-section">
           <div className="welcome-bg-pattern" />
           <div className="welcome-bg-glow" />
           <div className="welcome-wrap">
-            {/* Photo Column */}
             <div
               className="welcome-photo-col"
               data-animate
@@ -1609,9 +1461,7 @@ export default function AboutCompany() {
                 <br />
                 Supply Chain & Operational Excellence Specialist
               </p>
-              <div className="welcome-photo-badge">
-                Chief of Operations
-              </div>
+              <div className="welcome-photo-badge">Chief of Operations</div>
               <a
                 href="https://www.linkedin.com/in/timotius-febry-cws-3941926b"
                 target="_blank"
@@ -1629,7 +1479,6 @@ export default function AboutCompany() {
               </a>
             </div>
 
-            {/* Text Column */}
             <div
               className="welcome-text-col"
               data-animate
@@ -1708,9 +1557,7 @@ export default function AboutCompany() {
           </div>
         </section>
 
-        {/* ══════════════════════════════════════════
-            ── STATS / ACHIEVEMENTS (NEW - ANIMATED) ──
-        ══════════════════════════════════════════ */}
+        {/* ── STATS ── */}
         <section className="stats-section">
           <div className="stats-bg-dots" />
           <div className="stats-wrap" ref={statsRef}>
@@ -1720,7 +1567,7 @@ export default function AboutCompany() {
               data-anim="up"
               data-delay="0"
             >
-              <p className="stats-eyebrow">BY THE NUMBERS</p>
+              <p className="stats-eyebrow">BY THE NUMBERS — SINCE 2019</p>
               <h2 className="stats-title">Impact That Speaks for Itself</h2>
             </div>
             <div className="stats-grid">
@@ -1955,84 +1802,7 @@ export default function AboutCompany() {
           </div>
         </section>
 
-        {/* ── EXECUTIVE BOARD ── */}
-        <section className="exec-section">
-          <div className="sec-wrap">
-            <p
-              className="sec-eyebrow"
-              data-animate
-              data-anim="up"
-              data-delay="0"
-            >
-              LEADERSHIP
-            </p>
-            <h2
-              className="sec-title"
-              data-animate
-              data-anim="up"
-              data-delay="1"
-            >
-              Executive Board
-            </h2>
-            <p className="sec-desc" data-animate data-anim="up" data-delay="2">
-              Leadership team driving operational excellence across every
-              engagement.
-            </p>
-            <div
-              className="sec-divider"
-              data-animate
-              data-anim="fade"
-              data-delay="3"
-            />
-
-            <div className="exec-grid">
-              {boardMembers.map((m, i) => (
-                <div
-                  key={i}
-                  className="exec-card"
-                  data-animate
-                  data-anim="up"
-                  data-delay={String(i + 1)}
-                >
-                  <img className="exec-photo" src={m.image} alt={m.name} />
-                  <div className="exec-gradient" />
-                  <div className="exec-top-bar" />
-                  <a
-                    href={m.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="exec-linkedin"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <img
-                      src="/linkedin.svg"
-                      alt="LinkedIn"
-                      width={15}
-                      height={15}
-                      style={{ filter: "brightness(0) invert(1)" }}
-                    />
-                  </a>
-                  <div className="exec-content">
-                    <div className="exec-position-badge">{m.position}</div>
-                    <h3 className="exec-name">{m.name}</h3>
-                    <div className="exec-expertise">
-                      <p className="exec-expertise-label">EXPERTISE</p>
-                      <div className="exec-expertise-pills">
-                        {m.expertise.map((e, j) => (
-                          <span key={j} className="exec-pill">
-                            {e}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ── TEAM ── */}
+        {/* ── OUR PEOPLE (merged) ── */}
         <section className="team-section">
           <div className="sec-wrap">
             <p
@@ -2052,8 +1822,8 @@ export default function AboutCompany() {
               Our Team
             </h2>
             <p className="sec-desc" data-animate data-anim="up" data-delay="2">
-              The dedicated professionals behind LeanCore's daily operations and
-              client success.
+              From executive leadership to dedicated professionals — the people
+              driving LeanCore's mission every day.
             </p>
             <div
               className="sec-divider"
@@ -2063,13 +1833,13 @@ export default function AboutCompany() {
             />
 
             <div className="team-grid">
-              {teamMembers.map((m, i) => (
+              {allMembers.map((m, i) => (
                 <div
                   key={i}
                   className="team-card"
                   data-animate
                   data-anim="up"
-                  data-delay={String(i + 1)}
+                  data-delay={String((i % 3) + 1)}
                 >
                   <img className="team-photo" src={m.image} alt={m.name} />
                   <div className="team-gradient" />
@@ -2090,7 +1860,6 @@ export default function AboutCompany() {
                     />
                   </a>
                   <div className="team-content">
-                    <div className="team-position-badge">{m.position}</div>
                     <h3 className="team-name">{m.name}</h3>
                     <div className="team-expertise">
                       <p className="team-expertise-label">EXPERTISE</p>
