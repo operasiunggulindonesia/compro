@@ -111,7 +111,7 @@ const certifications = [
     details: [
       {
         label: "Format",
-        value: "4 sessions focused on demand-driven forecasting systems.",
+        value: "4 sessions focused on demand driven forecasting systems.",
       },
       {
         label: "Topics",
@@ -132,7 +132,7 @@ const aafmCredentials = [
     desc: "Setting benchmarks for postgraduate education with certifications recognized across the USA, Europe, Asia, and the Middle East.",
   },
   {
-    title: "Global Network — 150+ Countries",
+    title: "Global Network 150+ Countries",
     desc: "A worldwide community of certified professionals spanning the United States, UK, India, Singapore, UAE, and beyond.",
   },
   {
@@ -953,9 +953,9 @@ export default function InternationalCertification() {
               <div>
                 <p className="aafm-intro-text">
                   AAFM® (American Academy of Financial Management) is a
-                  U.S.–based professional certification body establishing
+                  U.S. based professional certification body establishing
                   international standards in business, finance, and management
-                  education. Acting as a global standard-setting authority,
+                  education. Acting as a global standard setting authority,
                   AAFM® bridges academia, industry, and governance to strengthen
                   professional practices worldwide.
                 </p>
@@ -1159,7 +1159,7 @@ export default function InternationalCertification() {
               <p className="prev-header-desc">
                 Our certification graduates come from manufacturing,
                 pharmaceuticals, energy, transportation, and financial services
-                sectors—demonstrating the broad applicability and impact of our
+                sectors demonstrating the broad applicability and impact of our
                 programs.
               </p>
             </div>

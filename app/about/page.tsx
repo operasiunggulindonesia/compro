@@ -1405,7 +1405,7 @@ export default function AboutCompany() {
               industries.
             </p>
             <p className="about-hero-desc ha4">
-              PT Operasi Unggul Indonesia — a management consulting firm
+              PT Operasi Unggul Indonesia is a management consulting firm
               dedicated to helping Indonesian manufacturing organizations
               achieve sustainable operational excellence.
             </p>
@@ -1509,7 +1509,7 @@ export default function AboutCompany() {
                 </p>
               </div>
 
-              <div className="welcome-body">
+              <div className="welcome-body" style={{ textAlign: "justify" }}>
                 <p>
                   This platform is designed to provide insights, solutions, and
                   professional services in the areas of{" "}
@@ -1523,14 +1523,14 @@ export default function AboutCompany() {
                   LeanCore Consulting was established with a strong commitment
                   to help organizations achieve{" "}
                   <strong>sustainable performance</strong> through structured
-                  improvement approaches — focusing not only on tools and
+                  improvement approaches focusing not only on tools and
                   methodologies, but on building the right mindset, capability,
                   and culture within organizations.
                 </p>
                 <p>
                   Led by practitioners and academics, we bring a unique
                   combination of <strong>practical industry experience</strong>{" "}
-                  and scientific approach — spanning manufacturing, services,
+                  and scientific approach spanning manufacturing, services,
                   and public sectors.
                 </p>
                 <p>
@@ -1539,20 +1539,7 @@ export default function AboutCompany() {
                   please feel free to reach out.
                 </p>
 
-                <div className="welcome-divider" />
-                <div className="welcome-sig">
-                  <p className="welcome-sig-name">
-                    Dr. Timotius Febry CWS, SE., ST., MM., MT., CSCA., CDS
-                  </p>
-                  <p className="welcome-sig-role">
-                    Associate Professor for Operation Management
-                    <br />
-                    Supply Chain & Operational Excellence Specialist
-                    <br />
-                    Director, LeanCore Consulting
-                  </p>
-                </div>
-              </div>
+                              </div>
             </div>
           </div>
         </section>
@@ -1609,12 +1596,13 @@ export default function AboutCompany() {
               data-delay="2"
             />
             <div className="about-us-grid">
-              <div
-                className="about-us-text"
-                data-animate
-                data-anim="left"
-                data-delay="2"
-              >
+  <div
+    className="about-us-text"
+    data-animate
+    data-anim="left"
+    data-delay="2"
+    style={{ textAlign: "justify", lineHeight: "1.8" }}
+  >
                 <p>
                   Founded with a clear mission to elevate Indonesian
                   manufacturing through operational excellence,{" "}
@@ -1627,15 +1615,15 @@ export default function AboutCompany() {
                   Backed by decades of collective expertise in supply chain
                   management, lean manufacturing, digital transformation, and
                   strategic business development, our consultants deliver more
-                  than insights. We work side-by-side with leadership teams to
-                  translate strategy into execution—ensuring measurable, lasting
+                  than insights. We work side by side with leadership teams to
+                  translate strategy into execution ensuring measurable, lasting
                   results.
                 </p>
                 <p>
                   Through an integrated approach that combines consulting,
                   executive training, and certification programs, we empower
                   organizations to strengthen internal capabilities, foster
-                  operational discipline, and drive long-term, scalable growth.
+                  operational discipline, and drive long term, scalable growth.
                 </p>
               </div>
               <div
@@ -1822,7 +1810,7 @@ export default function AboutCompany() {
               Our Team
             </h2>
             <p className="sec-desc" data-animate data-anim="up" data-delay="2">
-              From executive leadership to dedicated professionals — the people
+              From executive leadership to dedicated professionals the people
               driving LeanCore's mission every day.
             </p>
             <div
@@ -1898,7 +1886,7 @@ export default function AboutCompany() {
               Associate Trainers
             </h2>
             <p className="sec-desc" data-animate data-anim="up" data-delay="2">
-              Industry experts bringing real-world experience and strategic
+              Industry experts bringing real world experience and strategic
               insight to elevate your organization.
             </p>
             <div

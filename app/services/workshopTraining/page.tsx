@@ -29,7 +29,7 @@ const trainingAreas = [
   "Demand Forecasting & Sales & Operations Planning (S&OP)",
   "Kaizen, 5S, TPM & Gemba Walk",
   "Value Stream Mapping & Process Redesign",
-  "Six Sigma & Problem-Solving (DMAIC)",
+  "Six Sigma & Problem Solving (DMAIC)",
 ];
 
 const whyChoose = [
@@ -50,7 +50,7 @@ const whyChoose = [
     desc: "Delivered by industry experts with strong managerial insight.",
   },
   {
-    title: "Real-Industry Case Studies",
+    title: "Real Industry Case Studies",
     desc: "Learn from actual challenges faced by leading companies.",
   },
   {
@@ -62,7 +62,7 @@ const whyChoose = [
     desc: "Enhance technical, managerial, and leadership skills.",
   },
   {
-    title: "Practical & Data-Driven Approach",
+    title: "Practical & Data Driven Approach",
     desc: "Equip participants to make smarter, analytics-based decisions.",
   },
 ];
@@ -718,7 +718,7 @@ export default function WorkshopTraining() {
               </h1>
               <p className="wt-hero-desc">
                 Sustainable operational transformation requires more than just
-                strategy—it demands the right competency development at every
+                strategy, it demands the right competency development at every
                 level. LeanCore's training programs deliver practical, hands-on
                 learning experiences that improve efficiency, resilience, and
                 leadership in manufacturing and supply chain management.
@@ -760,13 +760,13 @@ export default function WorkshopTraining() {
                 <p>
                   Our programs equip industry professionals with technical and
                   managerial capabilities to apply Lean principles, process
-                  improvement frameworks, and data-driven operational
+                  improvement frameworks, and data driven operational
                   management.
                 </p>
                 <p>
                   Participants gain a solid understanding of Lean Thinking,
                   Kaizen, Six Sigma, production planning, Lean leadership, and
-                  supply chain resilience—while learning to address digital
+                  supply chain resilience while learning to address digital
                   transformation and industrial disruption through structured
                   approaches.
                 </p>

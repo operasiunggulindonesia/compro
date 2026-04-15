@@ -611,7 +611,7 @@ export default function Insights() {
 
           <p className="hero-subtitle">
             Strategic intelligence and operational frameworks curated for
-            executive decision-makers navigating complex business landscapes.
+            executive decision makers navigating complex business landscapes.
           </p>
 
           <div className="hero-scroll">

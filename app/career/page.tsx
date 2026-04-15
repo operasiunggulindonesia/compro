@@ -54,7 +54,7 @@ const values = [
   {
     icon: "⚡",
     title: "Drive for Excellence",
-    desc: "We set high standards and continuously push boundaries — in client work and in ourselves.",
+    desc: "We set high standards and continuously push boundaries in client work and in ourselves.",
   },
   {
     icon: "🤝",
@@ -676,7 +676,7 @@ export default function careerPage() {
             </h1>
             <p className="career-hero-desc">
               We're a team of consultants, trainers, and operators who believe
-              operational excellence transforms organizations — and career. Come
+              operational excellence transforms organizations and career. Come
               grow with us.
             </p>
             <a href="#openings" className="career-hero-btn">
@@ -692,7 +692,7 @@ export default function careerPage() {
             <p className="sec-eyebrow">WHY LEANCORE</p>
             <h2 className="sec-title">Life at Leancore</h2>
             <p className="sec-desc">
-              More than a job — it's a community of driven professionals
+              More than a job it's a community of driven professionals
               committed to excellence in everything they do.
             </p>
             <div className="sec-divider" />
@@ -853,7 +853,7 @@ export default function careerPage() {
               <p className="cta-desc">
                 We're always open to meeting exceptional people. If you believe
                 in operational excellence and want to make a real impact, reach
-                out — we'd love to hear from you.
+                out we'd love to hear from you.
               </p>
             </div>
             <div className="cta-actions">

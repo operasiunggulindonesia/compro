@@ -725,7 +725,7 @@ export default function BusinessAdvisor() {
                   implement real transformation on the ground.
                 </p>
                 <p>
-                  Backed by a team of experts with cross-industry experience, we
+                  Backed by a team of experts with cross industry experience, we
                   are committed to delivering solutions that are relevant,
                   impactful, and ready to meet future challenges. To achieve
                   comprehensive transformation, we offer a wide range of

@@ -10,7 +10,7 @@ const services = [
     slug: "businessAdvisor",
     icon: "/bisnis.svg",
     description:
-      "LeanCore Consulting supports manufacturing organizations in achieving operational excellence and sustainable growth. Through structured, lean-driven strategies, we deliver practical solutions that transform performance at both strategic and operational levels.",
+      "LeanCore Consulting supports manufacturing organizations in achieving operational excellence and sustainable growth. Through structured, lean driven strategies, we deliver practical solutions that transform performance at both strategic and operational levels.",
     features: [
       "Lean Manufacturing & Operational Excellence",
       "Digital Transformation & Smart Factory Initiatives",
@@ -26,7 +26,7 @@ const services = [
     slug: "internationalCertification",
     icon: "/sertif.svg",
     description:
-      "LeanCore Consulting, in collaboration with AAFM®, delivers globally recognized Certifications & Workshops designed to strengthen expertise in operations and supply chain management. Through hands-on workshops, real case studies, and expert-led sessions, participants gain practical skills and formal credentials.",
+      "LeanCore Consulting, in collaboration with AAFM®, delivers globally recognized Certifications & Workshops designed to strengthen expertise in operations and supply chain management. Through hands on workshops, real case studies, and expert-led sessions, participants gain practical skills and formal credentials.",
     features: [
       "Certified Strategic Business Analyst (CSBA)",
       "Certified Retail Management Expert (CRME)",
@@ -41,10 +41,10 @@ const services = [
     slug: "workshopTraining",
     icon: "/workshop.svg",
     description:
-      "LeanCore delivers applied Training & Workshops that build the competencies needed for sustainable operational excellence. Through structured, hands-on learning, participants develop the skills to implement lean principles, optimize processes, and lead transformation in manufacturing and supply chain environments.",
+      "LeanCore delivers applied Training & Workshops that build the competencies needed for sustainable operational excellence. Through structured, hands on learning, participants develop the skills to implement lean principles, optimize processes, and lead transformation in manufacturing and supply chain environments.",
     features: [
       "Lean Thinking & Operational Excellence",
-      "Six Sigma & Problem-Solving (DMAIC)",
+      "Six Sigma & Problem Solving (DMAIC)",
       "Production Planning & Inventory Optimization",
       "Digital Lean (IoT, Automation, MES)",
     ],
@@ -55,7 +55,7 @@ const services = [
     slug: "miniMBA",
     icon: "/miniMba.png",
     description:
-      "LeanCore's Mini MBA Programs combine intensive, hands-on workshops with internationally recognized certification to develop strategic, lean-driven leaders in manufacturing and supply chain management. Designed to address Industry 4.0 challenges.",
+      "LeanCore's Mini MBA Programs combine intensive, hands on workshops with internationally recognized certification to develop strategic, lean driven leaders in manufacturing and supply chain management. Designed to address Industry 4.0 challenges.",
     features: [
       "Strategic Thinking for Leaders",
       "Lean Operations & Process Excellence",
@@ -69,7 +69,7 @@ const services = [
     slug: "researchPublication",
     icon: "/research.svg",
     description:
-      "LeanCore's Research & Publication Program delivers evidence-based insights to support strategic decision-making. Combining academic rigor with practical application, the program provides market analysis, feasibility studies, and industry research that drive innovation and competitive advantage.",
+      "LeanCore's Research & Publication Program delivers evidence based insights to support strategic decision-making. Combining academic rigor with practical application, the program provides market analysis, feasibility studies, and industry research that drive innovation and competitive advantage.",
     features: [
       "Feasibility Study & Market Research",
       "Industry & Competitive Intelligence",

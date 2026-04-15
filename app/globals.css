@@ -50,3 +50,11 @@ body {
   animation: marquee 40s linear infinite;
 }
 
+.welcome-body p {
+  text-align: justify;
+}
+.intro-overview p {
+  text-align: justify;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}

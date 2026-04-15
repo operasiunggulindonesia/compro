@@ -948,7 +948,7 @@ export default function ResearchPublication() {
               <p className="areas-header-desc">
                 Five specialized research domains designed to deliver
                 evidence-based insights across every stage of the business
-                lifecycle — from market entry to operational optimization and
+                lifecycle from market entry to operational optimization and
                 digital transformation.
               </p>
             </div>
@@ -983,7 +983,7 @@ export default function ResearchPublication() {
             <p className="sec-eyebrow">INITIATIVES</p>
             <h2 className="sec-title">Events & Publications</h2>
             <p className="sec-desc">
-              A robust portfolio of knowledge-sharing activities connecting
+              A robust portfolio of knowledge sharing activities connecting
               academia, industry, and professional practice.
             </p>
             <div className="sec-divider" />
@@ -1036,7 +1036,7 @@ export default function ResearchPublication() {
                 </h3>
                 <p className="cta-desc">
                   Collaborate with LeanCore to transform data into actionable
-                  insights and evidence-based strategies that drive innovation,
+                  insights and evidence based strategies that drive innovation,
                   operational excellence, and sustainable growth.
                 </p>
                 <Link href="/contact" className="cta-btn">

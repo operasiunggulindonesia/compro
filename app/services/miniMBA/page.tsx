@@ -658,7 +658,7 @@ export default function MiniMBA() {
             <p className="sec-eyebrow">WHAT WE OFFER</p>
             <h2 className="sec-title">Program Overview</h2>
             <p className="sec-desc">
-              A two-fold journey: intensive workshops delivering hands-on
+              A two fold journey: intensive workshops delivering hands-on
               operational and strategic knowledge, followed by internationally
               recognized certification that validates professional expertise.
             </p>
