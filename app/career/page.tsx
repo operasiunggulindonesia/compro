@@ -692,8 +692,8 @@ export default function careerPage() {
             <p className="sec-eyebrow">WHY LEANCORE</p>
             <h2 className="sec-title">Life at Leancore</h2>
             <p className="sec-desc">
-              More than a job it's a community of driven professionals
-              committed to excellence in everything they do.
+              More than a job it's a community of driven professionals committed
+              to excellence in everything they do.
             </p>
             <div className="sec-divider" />
             <div className="values-grid">

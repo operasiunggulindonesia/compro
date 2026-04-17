@@ -1461,7 +1461,6 @@ export default function AboutCompany() {
                 <br />
                 Supply Chain & Operational Excellence Specialist
               </p>
-              <div className="welcome-photo-badge">Chief of Operations</div>
               <a
                 href="https://www.linkedin.com/in/timotius-febry-cws-3941926b"
                 target="_blank"
