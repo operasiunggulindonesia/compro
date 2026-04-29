@@ -82,6 +82,16 @@ const allMembers = [
       "Account & Pipeline Management",
     ],
   },
+  {
+    image: "/caroline.jpeg",
+    name: "Caroline Chandrana",
+    linkedin: "https://id.linkedin.com/in/caroline-chandrana-6a36573b7",
+    expertise: [
+      "Commercial Strategy & Business Development",
+      "Client Acquisition & Partnership",
+      "Revenue Growth & Market Expansion",
+    ],
+  },
 ];
 
 const trainers = [
@@ -166,6 +176,19 @@ const trainers = [
       "Operations Excellence & Management Specialist at Sinar Baja Electric | LSS Green Belt Certified",
     linkedin: "https://www.linkedin.com/in/ian-gibranata-82974725a",
     expertise: ["Operational Excellence"],
+  },
+  {
+    name: "Novi Nastiti",
+    position: "Associate Trainer",
+    linkedin:
+      "https://www.linkedin.com/in/noviprastiti/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BTiMQyiemQfmN8uzNIdWOsw%3D%3D",
+    expertise: ["Retail Management"],
+  },
+  {
+    name: "Anita Safitri",
+    position: "Associate Trainer",
+    linkedin: "https://www.linkedin.com/in/anita-safitri-0016a5254/",
+    expertise: ["Retail Management"],
   },
 ];
 
@@ -1042,8 +1065,9 @@ export default function AboutCompany() {
         .team-grid .team-card:nth-child(1) { grid-column: span 2; }
         .team-grid .team-card:nth-child(2) { grid-column: span 2; }
         .team-grid .team-card:nth-child(3) { grid-column: span 2; }
-        .team-grid .team-card:nth-child(4) { grid-column: 2 / span 2; }
-        .team-grid .team-card:nth-child(5) { grid-column: 4 / span 2; }
+        .team-grid .team-card:nth-child(4) { grid-column: span 2; }
+        .team-grid .team-card:nth-child(5) { grid-column: span 2; }
+        .team-grid .team-card:nth-child(6) { grid-column: 2 / span 2; }
 
         /* Shared card styles */
         .team-card {
@@ -1537,8 +1561,7 @@ export default function AboutCompany() {
                   organization. For inquiries or collaboration opportunities,
                   please feel free to reach out.
                 </p>
-
-                              </div>
+              </div>
             </div>
           </div>
         </section>
@@ -1595,13 +1618,13 @@ export default function AboutCompany() {
               data-delay="2"
             />
             <div className="about-us-grid">
-  <div
-    className="about-us-text"
-    data-animate
-    data-anim="left"
-    data-delay="2"
-    style={{ textAlign: "justify", lineHeight: "1.8" }}
-  >
+              <div
+                className="about-us-text"
+                data-animate
+                data-anim="left"
+                data-delay="2"
+                style={{ textAlign: "justify", lineHeight: "1.8" }}
+              >
                 <p>
                   Founded with a clear mission to elevate Indonesian
                   manufacturing through operational excellence,{" "}
